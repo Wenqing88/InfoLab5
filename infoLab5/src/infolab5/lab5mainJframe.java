@@ -34,8 +34,6 @@ public class lab5mainJframe extends javax.swing.JFrame {
         existPatientButton = new javax.swing.JButton();
         doctorButton = new javax.swing.JButton();
         sysAdminButton = new javax.swing.JButton();
-        hAdminBotton = new javax.swing.JButton();
-        commAdminButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,24 +82,10 @@ public class lab5mainJframe extends javax.swing.JFrame {
             }
         });
 
-        sysAdminButton.setText("Sys Admin");
+        sysAdminButton.setText("Administrator");
         sysAdminButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sysAdminButtonActionPerformed(evt);
-            }
-        });
-
-        hAdminBotton.setText("Hospoital Admin");
-        hAdminBotton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hAdminBottonActionPerformed(evt);
-            }
-        });
-
-        commAdminButton.setText("Comm Admin");
-        commAdminButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                commAdminButtonActionPerformed(evt);
             }
         });
 
@@ -112,12 +96,10 @@ public class lab5mainJframe extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bottomPanelLayout.createSequentialGroup()
                 .addContainerGap(317, Short.MAX_VALUE)
                 .addGroup(bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(existPatientButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(existPatientButton, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
                     .addComponent(newPatientButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(doctorButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(sysAdminButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(hAdminBotton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(commAdminButton, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sysAdminButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(305, 305, 305))
         );
         bottomPanelLayout.setVerticalGroup(
@@ -131,11 +113,7 @@ public class lab5mainJframe extends javax.swing.JFrame {
                 .addComponent(doctorButton)
                 .addGap(18, 18, 18)
                 .addComponent(sysAdminButton)
-                .addGap(18, 18, 18)
-                .addComponent(hAdminBotton)
-                .addGap(18, 18, 18)
-                .addComponent(commAdminButton)
-                .addGap(147, 147, 147))
+                .addGap(229, 229, 229))
         );
 
         jSplitPane1.setRightComponent(bottomPanel);
@@ -169,14 +147,6 @@ public class lab5mainJframe extends javax.swing.JFrame {
     private void sysAdminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sysAdminButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_sysAdminButtonActionPerformed
-
-    private void hAdminBottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hAdminBottonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_hAdminBottonActionPerformed
-
-    private void commAdminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_commAdminButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_commAdminButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,10 +185,8 @@ public class lab5mainJframe extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bottomPanel;
-    private javax.swing.JButton commAdminButton;
     private javax.swing.JButton doctorButton;
     private javax.swing.JButton existPatientButton;
-    private javax.swing.JButton hAdminBotton;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JButton newPatientButton;
     private javax.swing.JButton sysAdminButton;

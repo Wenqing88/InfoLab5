@@ -91,12 +91,10 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="317" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="existPatientButton" max="32767" attributes="0"/>
+                          <Component id="existPatientButton" pref="128" max="32767" attributes="0"/>
                           <Component id="newPatientButton" max="32767" attributes="0"/>
                           <Component id="doctorButton" max="32767" attributes="0"/>
                           <Component id="sysAdminButton" max="32767" attributes="0"/>
-                          <Component id="hAdminBotton" max="32767" attributes="0"/>
-                          <Component id="commAdminButton" min="-2" pref="128" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="305" max="-2" attributes="0"/>
                   </Group>
@@ -113,11 +111,7 @@
                       <Component id="doctorButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="sysAdminButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="hAdminBotton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="commAdminButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="229" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -149,26 +143,10 @@
             </Component>
             <Component class="javax.swing.JButton" name="sysAdminButton">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Sys Admin"/>
+                <Property name="text" type="java.lang.String" value="Administrator"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sysAdminButtonActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="hAdminBotton">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Hospoital Admin"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="hAdminBottonActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="commAdminButton">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Comm Admin"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="commAdminButtonActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
