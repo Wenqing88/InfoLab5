@@ -47,20 +47,21 @@ public class lab5mainJframe extends javax.swing.JFrame {
         topPanelLayout.setHorizontalGroup(
             topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(topPanelLayout.createSequentialGroup()
-                .addGap(330, 330, 330)
+                .addGap(310, 310, 310)
                 .addComponent(tittleLabel)
-                .addContainerGap(316, Short.MAX_VALUE))
+                .addContainerGap(336, Short.MAX_VALUE))
         );
         topPanelLayout.setVerticalGroup(
             topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(topPanelLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addGap(33, 33, 33)
                 .addComponent(tittleLabel)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         jSplitPane1.setTopComponent(topPanel);
 
+        newPatientButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         newPatientButton.setText("New Patient");
         newPatientButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,6 +69,7 @@ public class lab5mainJframe extends javax.swing.JFrame {
             }
         });
 
+        existPatientButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         existPatientButton.setText("Existing Patient");
         existPatientButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,6 +77,7 @@ public class lab5mainJframe extends javax.swing.JFrame {
             }
         });
 
+        doctorButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         doctorButton.setText("Doctor");
         doctorButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,6 +85,7 @@ public class lab5mainJframe extends javax.swing.JFrame {
             }
         });
 
+        sysAdminButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         sysAdminButton.setText("Administrator");
         sysAdminButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,9 +98,9 @@ public class lab5mainJframe extends javax.swing.JFrame {
         bottomPanelLayout.setHorizontalGroup(
             bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bottomPanelLayout.createSequentialGroup()
-                .addContainerGap(317, Short.MAX_VALUE)
+                .addContainerGap(270, Short.MAX_VALUE)
                 .addGroup(bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(existPatientButton, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
+                    .addComponent(existPatientButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(newPatientButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(doctorButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(sysAdminButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -105,15 +109,15 @@ public class lab5mainJframe extends javax.swing.JFrame {
         bottomPanelLayout.setVerticalGroup(
             bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bottomPanelLayout.createSequentialGroup()
-                .addContainerGap(320, Short.MAX_VALUE)
+                .addGap(140, 140, 140)
                 .addComponent(newPatientButton)
-                .addGap(18, 18, 18)
+                .addGap(38, 38, 38)
                 .addComponent(existPatientButton)
-                .addGap(18, 18, 18)
+                .addGap(37, 37, 37)
                 .addComponent(doctorButton)
-                .addGap(18, 18, 18)
+                .addGap(43, 43, 43)
                 .addComponent(sysAdminButton)
-                .addGap(229, 229, 229))
+                .addContainerGap(317, Short.MAX_VALUE))
         );
 
         jSplitPane1.setRightComponent(bottomPanel);
