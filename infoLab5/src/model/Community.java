@@ -4,10 +4,16 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author yulon
  */
 public class Community {
+    String city;
+    String name;
+    ArrayList<String> houses;
+    ArrayList<Hospital> hospitals;
     
 }

@@ -4,10 +4,14 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author yulon
  */
 public class HospitalDirectory {
-    
+    String city;
+    ArrayList<Hospital> hospital;
+    DoctorDirectory doctorDirectory;
 }

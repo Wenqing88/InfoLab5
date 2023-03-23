@@ -4,12 +4,12 @@
  */
 package model;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author yulon
  */
-public class PeopleDirectory {
-    ArrayList<Person> people;
+public class Doctor {
+    String name;
+    int doctorID;
+    Hospital hospital;
 }

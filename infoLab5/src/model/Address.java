@@ -4,12 +4,13 @@
  */
 package model;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author yulon
  */
-public class PeopleDirectory {
-    ArrayList<Person> people;
+public class Address {
+    String city;
+    String house;
+    Community comm;
+    
 }

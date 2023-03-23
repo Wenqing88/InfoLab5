@@ -4,12 +4,14 @@
  */
 package model;
 
-import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
  * @author yulon
  */
-public class PeopleDirectory {
-    ArrayList<Person> people;
+public class Encounter {
+    Doctor doctor;
+    Date date; 
+    VitalSign vitalSign;
 }
