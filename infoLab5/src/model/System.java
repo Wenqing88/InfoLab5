@@ -20,7 +20,13 @@ public class System {
     
     private static volatile System instance = null;
     
-    private System(){}
+    private System(){
+        doctorDirs = DoctorDirectory.getInstance();
+        patientDirs = PatientDirectory.getInstance();
+        peopleDirs = PeopleDirectory.getInstance();
+        hospitalDirs = HospitalDirectory.getInstance();
+        communities = new ArrayList<Community>();
+    }
     
     public static System getInstance(){
         if(instance == null){
@@ -32,4 +38,16 @@ public class System {
         }
         return instance;
     }
+    
+    public ArrayList<Community> getCommunities(){
+        return this.communities;
+    }
+    
+    public void addCommunity(Community comm){
+        for(Community c : communities){
+            if(c.city == comm.city && c.name == comm.name) return;
+        }
+        this.communities.add(comm);
+    }
+    
 }

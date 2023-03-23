@@ -11,13 +11,15 @@ import java.util.ArrayList;
  * @author yulon
  */
 public class HospitalDirectory {
-    String city;
-    ArrayList<Hospital> hospital;
+    ArrayList<Hospital> hospitals;
     DoctorDirectory doctorDirectory;
     
     private static volatile HospitalDirectory instance = null;
     
-    private HospitalDirectory(){}
+    private HospitalDirectory(){
+        hospitals = new ArrayList<Hospital>();
+        doctorDirectory = DoctorDirectory.getInstance();
+    }
     
     public static HospitalDirectory getInstance(){
         if(instance == null){
@@ -28,5 +30,25 @@ public class HospitalDirectory {
             }
         }
         return instance;
+    }
+    
+    public ArrayList<Hospital> getHospitalsByCity(String city){
+        ArrayList<Hospital> hos = new ArrayList<Hospital>();
+        for(Hospital h : hospitals){
+            if(h.city == city) this.hospitals.add(h);
+        }
+        return hos;
+    }
+    
+    public ArrayList<Hospital> getHospitalsByCommunity(String community){
+        ArrayList<Hospital> hos = new ArrayList<Hospital>();
+        for(Hospital h : hospitals){
+            if(h.comm.name == community) this.hospitals.add(h);
+        }
+        return hos;
+    }
+    
+    public ArrayList<Hospital> getAllHospitals(){
+        return this.hospitals;
     }
 }
