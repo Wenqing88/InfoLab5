@@ -27,260 +27,75 @@ public class AdminPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         tittleLabel = new javax.swing.JLabel();
-        hospitalsLabel = new javax.swing.JLabel();
-        doctorsLabel = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        hospitalTable = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        doctorTable = new javax.swing.JTable();
-        newHospitalButton = new javax.swing.JButton();
-        newDocButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        hospNameField = new javax.swing.JTextField();
-        hospCityLabel = new javax.swing.JLabel();
-        hospCity = new javax.swing.JTextField();
-        hospCommLabel = new javax.swing.JLabel();
-        hospCommField = new javax.swing.JTextField();
-        hospUpdateButton = new javax.swing.JButton();
-        docUpdateButton = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        docHospLabel = new javax.swing.JLabel();
-        docHospField = new javax.swing.JTextField();
-        docNameField = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         tittleLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         tittleLabel.setText("Administrator");
 
-        hospitalsLabel.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 14)); // NOI18N
-        hospitalsLabel.setText("Hospitals");
-
-        doctorsLabel.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 14)); // NOI18N
-        doctorsLabel.setText("Doctors");
-
-        hospitalTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Hospital Name", "Community", "City"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(hospitalTable);
-
-        doctorTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Name", "DoctorID", "Hospital"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane2.setViewportView(doctorTable);
-
-        newHospitalButton.setText("New Hosptial");
-        newHospitalButton.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
+        jButton1.setText("Hospital");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                newHospitalButtonActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
-        newDocButton.setText("New Doctor");
-        newDocButton.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
+        jButton2.setText("Doctor");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                newDocButtonActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Hospital Name");
-
-        hospNameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hospNameFieldActionPerformed(evt);
-            }
-        });
-
-        hospCityLabel.setText("City");
-
-        hospCity.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hospCityActionPerformed(evt);
-            }
-        });
-
-        hospCommLabel.setText("Community");
-
-        hospUpdateButton.setText("Update");
-        hospUpdateButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hospUpdateButtonActionPerformed(evt);
-            }
-        });
-
-        docUpdateButton.setText("Update");
-
-        jLabel2.setText("Doctor Name");
-
-        docHospLabel.setText("Hospital");
+        jButton3.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
+        jButton3.setText("Patient");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(hospitalsLabel)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(newHospitalButton)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(hospUpdateButton))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel1)
-                                                .addComponent(hospCityLabel)
-                                                .addComponent(hospCommLabel))
-                                            .addGap(32, 32, 32)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(docUpdateButton)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(hospNameField)
-                                                    .addComponent(hospCity, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(hospCommField, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))))
-                                    .addGap(35, 35, 35))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(docNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(docHospField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(62, 62, 62)))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(tittleLabel))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(doctorsLabel)
-                            .addComponent(newDocButton)
-                            .addComponent(jLabel2)
-                            .addComponent(docHospLabel))
-                        .addGap(164, 164, 164)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(39, Short.MAX_VALUE))
+                        .addGap(295, 295, 295)
+                        .addComponent(tittleLabel)
+                        .addGap(0, 311, Short.MAX_VALUE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
+                .addGap(48, 48, 48)
                 .addComponent(tittleLabel)
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(hospitalsLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(newHospitalButton)
-                            .addComponent(hospUpdateButton))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(hospNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(15, 15, 15)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(hospCityLabel)
-                            .addComponent(hospCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(hospCommLabel)
-                    .addComponent(hospCommField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(104, 104, 104)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(doctorsLabel)
-                        .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(newDocButton)
-                            .addComponent(docUpdateButton))
-                        .addGap(34, 34, 34)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(docNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(docHospLabel)
-                            .addComponent(docHospField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(217, Short.MAX_VALUE))
+                .addGap(155, 155, 155)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(196, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void newHospitalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newHospitalButtonActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_newHospitalButtonActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void newDocButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newDocButtonActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_newDocButtonActionPerformed
-
-    private void hospNameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hospNameFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_hospNameFieldActionPerformed
-
-    private void hospCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hospCityActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_hospCityActionPerformed
-
-    private void hospUpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hospUpdateButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_hospUpdateButtonActionPerformed
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField docHospField;
-    private javax.swing.JLabel docHospLabel;
-    private javax.swing.JTextField docNameField;
-    private javax.swing.JButton docUpdateButton;
-    private javax.swing.JTable doctorTable;
-    private javax.swing.JLabel doctorsLabel;
-    private javax.swing.JTextField hospCity;
-    private javax.swing.JLabel hospCityLabel;
-    private javax.swing.JTextField hospCommField;
-    private javax.swing.JLabel hospCommLabel;
-    private javax.swing.JTextField hospNameField;
-    private javax.swing.JButton hospUpdateButton;
-    private javax.swing.JTable hospitalTable;
-    private javax.swing.JLabel hospitalsLabel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JButton newDocButton;
-    private javax.swing.JButton newHospitalButton;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel tittleLabel;
     // End of variables declaration//GEN-END:variables
 }
