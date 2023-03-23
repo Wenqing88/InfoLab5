@@ -12,4 +12,19 @@ import java.util.ArrayList;
  */
 public class PatientDirectory {
     ArrayList<Patient> patients;
+    
+    private static volatile PatientDirectory instance = null;
+    
+    private PatientDirectory(){}
+    
+    public static PatientDirectory getInstance(){
+        if(instance == null){
+            synchronized(PatientDirectory.class){
+                if(instance == null){
+                    instance = new PatientDirectory();
+                }
+            }
+        }
+        return instance;
+    }
 }

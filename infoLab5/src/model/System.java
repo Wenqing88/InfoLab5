@@ -11,11 +11,25 @@ import java.util.ArrayList;
  * @author yulon
  */
 public class System {
-    ArrayList<DoctorDirectory> doctorDirs;
-    ArrayList<PatientDirectory> patientDirs;
-    ArrayList<PeopleDirectory> peopleDirs;
-    ArrayList<HospitalDirectory> hospitalDirs;
+    DoctorDirectory doctorDirs;
+    PatientDirectory patientDirs;
+    PeopleDirectory peopleDirs;
+    HospitalDirectory hospitalDirs;
     ArrayList<Community> communities;
     String cities[];
     
+    private static volatile System instance = null;
+    
+    private System(){}
+    
+    public static System getInstance(){
+        if(instance == null){
+            synchronized(System.class){
+                if(instance == null){
+                    instance = new System();
+                }
+            }
+        }
+        return instance;
+    }
 }

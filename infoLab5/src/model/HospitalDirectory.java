@@ -14,4 +14,19 @@ public class HospitalDirectory {
     String city;
     ArrayList<Hospital> hospital;
     DoctorDirectory doctorDirectory;
+    
+    private static volatile HospitalDirectory instance = null;
+    
+    private HospitalDirectory(){}
+    
+    public static HospitalDirectory getInstance(){
+        if(instance == null){
+            synchronized(HospitalDirectory.class){
+                if(instance == null){
+                    instance = new HospitalDirectory();
+                }
+            }
+        }
+        return instance;
+    }
 }
