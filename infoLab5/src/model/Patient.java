@@ -4,10 +4,22 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author yulon
  */
 public class Patient extends Person {
+    ArrayList<Encounter> encounterHistory;
+
+    public ArrayList<Encounter> getEncounterHistory() {
+        return encounterHistory;
+    }
+
+    public void setEncounterHistory(ArrayList<Encounter> encounterHistory) {
+        this.encounterHistory = encounterHistory;
+    }
+    
     
 }

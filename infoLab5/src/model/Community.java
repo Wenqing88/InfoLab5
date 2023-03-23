@@ -48,4 +48,11 @@ public class Community {
         this.hospitals = hospitals;
     }
     
+    public void addHouse(String house) {
+        this.houses.add(house);
+    }
+
+    public void addHospitals(Hospital hospitals) {
+        this.hospitals.add(hospitals);
+    }
 }

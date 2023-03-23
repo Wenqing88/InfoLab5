@@ -17,7 +17,7 @@ public class HospitalDirectory {
     private static volatile HospitalDirectory instance = null;
     
     private HospitalDirectory(){
-        hospitals = new ArrayList<Hospital>();
+        hospitals = new ArrayList<>();
         doctorDirectory = DoctorDirectory.getInstance();
     }
     
@@ -33,17 +33,17 @@ public class HospitalDirectory {
     }
     
     public ArrayList<Hospital> getHospitalsByCity(String city){
-        ArrayList<Hospital> hos = new ArrayList<Hospital>();
+        ArrayList<Hospital> hos = new ArrayList<>();
         for(Hospital h : hospitals){
-            if(h.city == city) this.hospitals.add(h);
+            if(h.getCity() == city) this.hospitals.add(h);
         }
         return hos;
     }
     
-    public ArrayList<Hospital> getHospitalsByCommunity(String community){
-        ArrayList<Hospital> hos = new ArrayList<Hospital>();
+    public ArrayList<Hospital> getHospitalsByCommunity(Community community){
+        ArrayList<Hospital> hos = new ArrayList<>();
         for(Hospital h : hospitals){
-            if(h.comm.name == community) this.hospitals.add(h);
+            if(h.getComm() == community) this.hospitals.add(h);
         }
         return hos;
     }

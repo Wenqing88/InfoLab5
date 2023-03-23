@@ -33,9 +33,9 @@ public class DoctorDirectory {
     }
     
     public ArrayList<Doctor> getDoctorsByHospital(Hospital hos){
-        ArrayList<Doctor> newhos = new ArrayList<Doctor>();
+        ArrayList<Doctor> newhos = new ArrayList<>();
         for(Doctor d: this.doctors){
-            if(d.hospital == hos) newhos.add(d);
+            if(d.getHospital() == hos) newhos.add(d);
         }
         return newhos;
     }

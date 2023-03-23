@@ -19,8 +19,8 @@ public class IDList {
     private static volatile IDList instance = null;
     
     private IDList(){
-        patientIDs = new ArrayList<Integer>();
-        doctorIDs = new ArrayList<Integer>();
+        patientIDs = new ArrayList<>();
+        doctorIDs = new ArrayList<>();
     }
     
     public static IDList getInstance(){

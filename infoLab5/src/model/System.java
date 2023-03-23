@@ -45,7 +45,7 @@ public class System {
     
     public void addCommunity(Community comm){
         for(Community c : communities){
-            if(c.city == comm.city && c.name == comm.name) return;
+            if(c.getCity() == comm.getCity() && c.getName() == comm.getName()) return;
         }
         this.communities.add(comm);
     }
