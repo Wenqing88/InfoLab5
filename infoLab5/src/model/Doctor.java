@@ -12,4 +12,30 @@ public class Doctor {
     String name;
     int doctorID;
     Hospital hospital;
+
+    public String getName() {
+        return name;
+    }
+
+    public int getDoctorID() {
+        return doctorID;
+    }
+
+    public Hospital getHospital() {
+        return hospital;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDoctorID(int doctorID) {
+        this.doctorID = doctorID;
+    }
+
+    public void setHospital(Hospital hospital) {
+        this.hospital = hospital;
+    }
+    
+    
 }

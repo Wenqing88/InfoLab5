@@ -27,4 +27,17 @@ public class DoctorDirectory {
         }
         return instance;
     }
+    
+    public ArrayList<Doctor> getAllDoctors(){
+        return this.doctors;
+    }
+    
+    public ArrayList<Doctor> getDoctorsByHospital(Hospital hos){
+        ArrayList<Doctor> newhos = new ArrayList<Doctor>();
+        for(Doctor d: this.doctors){
+            if(d.hospital == hos) newhos.add(d);
+        }
+        return newhos;
+    }
+    
 }

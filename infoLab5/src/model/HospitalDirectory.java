@@ -48,7 +48,7 @@ public class HospitalDirectory {
         return hos;
     }
     
-    public ArrayList<Hospital> getAllHospitals(){
+    public ArrayList<Hospital> getHospitals(){
         return this.hospitals;
     }
 }

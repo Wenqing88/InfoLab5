@@ -12,4 +12,29 @@ public class Hospital {
     String city;
     String name;
     Community comm;
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Community getComm() {
+        return comm;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setComm(Community comm) {
+        this.comm = comm;
+    }
+    
 }

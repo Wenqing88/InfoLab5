@@ -12,4 +12,30 @@ public class Person {
     String name;
     int ID;
     Address address;
+
+    public String getName() {
+        return name;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+    
+    
 }

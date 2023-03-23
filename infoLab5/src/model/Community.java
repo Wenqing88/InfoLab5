@@ -15,5 +15,37 @@ public class Community {
     String name;
     ArrayList<String> houses;
     ArrayList<Hospital> hospitals;
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public ArrayList<String> getHouses() {
+        return houses;
+    }
+
+    public ArrayList<Hospital> getHospitals() {
+        return hospitals;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setHouses(ArrayList<String> houses) {
+        this.houses = houses;
+    }
+
+    public void setHospitals(ArrayList<Hospital> hospitals) {
+        this.hospitals = hospitals;
+    }
     
 }

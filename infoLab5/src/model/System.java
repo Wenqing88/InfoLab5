@@ -16,7 +16,7 @@ public class System {
     PeopleDirectory peopleDirs;
     HospitalDirectory hospitalDirs;
     ArrayList<Community> communities;
-    String cities[];
+    ArrayList<String> cities;
     
     private static volatile System instance = null;
     
@@ -48,6 +48,18 @@ public class System {
             if(c.city == comm.city && c.name == comm.name) return;
         }
         this.communities.add(comm);
+    }
+    
+    
+    public ArrayList<String> getCities(){
+        return this.cities;
+    }
+    
+    public void addCity(String city){
+        for(String c : cities){
+            if(c == city) return;
+        }
+        this.cities.add(city);
     }
     
 }

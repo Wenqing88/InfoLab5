@@ -15,7 +15,9 @@ public class PeopleDirectory {
     
     private static volatile PeopleDirectory instance = null;
     
-    private PeopleDirectory(){}
+    private PeopleDirectory(){
+        people = new ArrayList<Person>();
+    }
     
     public static PeopleDirectory getInstance(){
         if(instance == null){
