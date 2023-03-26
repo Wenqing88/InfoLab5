@@ -9,5 +9,5 @@ package model;
  * @author yulon
  */
 public class SystemAdministrator {
-    System sys;
+    MedicalSystem sys;
 }

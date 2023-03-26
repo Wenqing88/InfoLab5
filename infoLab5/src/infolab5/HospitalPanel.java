@@ -4,6 +4,13 @@
  */
 package infolab5;
 
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.Community;
+import model.Hospital;
+import model.HospitalDirectory;
+import model.MedicalSystem;
+
 /**
  *
  * @author wenqing-mbp16
@@ -15,6 +22,7 @@ public class HospitalPanel extends javax.swing.JPanel {
      */
     public HospitalPanel() {
         initComponents();
+        poplutateTable();
     }
 
     /**
@@ -28,14 +36,14 @@ public class HospitalPanel extends javax.swing.JPanel {
 
         titleLabel = new javax.swing.JLabel();
         hospitalInfoLabel = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        hospitalTable = new javax.swing.JTable();
         deleteButton = new javax.swing.JButton();
         addButton = new javax.swing.JButton();
         updateButton = new javax.swing.JButton();
         hospitalLabel = new javax.swing.JLabel();
-        hospitalField = new javax.swing.JTextField();
         communityLabel = new javax.swing.JLabel();
         hospitalLabel2 = new javax.swing.JLabel();
+        hospitalField = new javax.swing.JTextField();
         communityField = new javax.swing.JTextField();
         cityField = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
@@ -43,7 +51,7 @@ public class HospitalPanel extends javax.swing.JPanel {
         titleLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         titleLabel.setText("Hospital Info");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        hospitalTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -62,9 +70,14 @@ public class HospitalPanel extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
-        hospitalInfoLabel.setViewportView(jTable1);
+        hospitalInfoLabel.setViewportView(hospitalTable);
 
         deleteButton.setText("Delete");
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
 
         addButton.setText("Add");
         addButton.addActionListener(new java.awt.event.ActionListener() {
@@ -74,18 +87,23 @@ public class HospitalPanel extends javax.swing.JPanel {
         });
 
         updateButton.setText("Update");
+        updateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateButtonActionPerformed(evt);
+            }
+        });
 
         hospitalLabel.setText("Hospital ");
+
+        communityLabel.setText("Community");
+
+        hospitalLabel2.setText("City");
 
         hospitalField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hospitalFieldActionPerformed(evt);
             }
         });
-
-        communityLabel.setText("Community");
-
-        hospitalLabel2.setText("City");
 
         communityField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -174,6 +192,26 @@ public class HospitalPanel extends javax.swing.JPanel {
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         // TODO add your handling code here:
+        Hospital hospital = new Hospital();
+        
+        hospital.setName(hospitalField.getText());
+        for(Community comm : MedicalSystem.getInstance().getCommunities()){
+            if(comm.getName() == communityField.getText() && comm.getCity() == cityField.getText()){
+                hospital.setComm(comm);
+                hospital.setCity(comm.getCity());
+                comm.addHospital(hospital);
+            }
+        }
+        
+        if(hospital.getComm() == null){
+            Community comm = new Community();
+            comm.setName(communityField.getText());
+            comm.setCity(cityField.getText());
+            comm.addHospital(hospital);
+            hospital.setComm(comm);
+            hospital.setCity(comm.getCity());
+        }
+        
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void hospitalFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hospitalFieldActionPerformed
@@ -192,7 +230,44 @@ public class HospitalPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+        // TODO add your handling code here:
+        int selectedIndex = hospitalTable.getSelectedRow();
+        if (selectedIndex < 0) {
+            JOptionPane.showMessageDialog(this, "Please select a row to be deleted", "Error - No selection", JOptionPane.WARNING_MESSAGE);
+        } else {
+            DefaultTableModel model = (DefaultTableModel) hospitalTable.getModel();
+            Hospital selectedHospital = (Hospital) model.getValueAt(selectedIndex, 0);
+            HospitalDirectory.getInstance().removeHospital(selectedHospital);
+            JOptionPane.showMessageDialog(this, "Hospital Information is deleted successfully.");
+            poplutateTable();
+        }
+    }//GEN-LAST:event_deleteButtonActionPerformed
 
+    private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_updateButtonActionPerformed
+
+
+    public void poplutateTable() {
+        DefaultTableModel model = (DefaultTableModel) hospitalTable.getModel();
+        model.setRowCount(0);
+        for (Hospital h : HospitalDirectory.getInstance().getHospitals()) {
+            Object[] row = new Object[2];
+            row[0] = h.getName();
+            row[1] = h.getComm().getName();
+            row[2] = h.getCity();
+            model.addRow(row);
+        }
+        clearFields();
+    }
+    
+    private void clearFields() {
+        hospitalField.setText("");
+        communityField.setText("");
+        cityField.setText("");
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.JTextField cityField;
@@ -203,8 +278,8 @@ public class HospitalPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane hospitalInfoLabel;
     private javax.swing.JLabel hospitalLabel;
     private javax.swing.JLabel hospitalLabel2;
+    private javax.swing.JTable hospitalTable;
     private javax.swing.JButton jButton1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel titleLabel;
     private javax.swing.JButton updateButton;
     // End of variables declaration//GEN-END:variables

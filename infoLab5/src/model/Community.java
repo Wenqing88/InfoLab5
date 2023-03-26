@@ -52,7 +52,7 @@ public class Community {
         this.houses.add(house);
     }
 
-    public void addHospitals(Hospital hospitals) {
+    public void addHospital(Hospital hospitals) {
         this.hospitals.add(hospitals);
     }
 }

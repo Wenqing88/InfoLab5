@@ -51,4 +51,12 @@ public class HospitalDirectory {
     public ArrayList<Hospital> getHospitals(){
         return this.hospitals;
     }
+    
+    public void addHospital(Hospital hos){
+        this.hospitals.add(hos);
+    }
+    
+    public void removeHospital(Hospital hos){
+        this.hospitals.remove(hos);
+    }
 }

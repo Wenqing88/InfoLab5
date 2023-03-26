@@ -4,6 +4,9 @@
  */
 package infolab5;
 
+import static java.awt.image.ImageObserver.HEIGHT;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author User
@@ -26,7 +29,7 @@ public class lab5mainJframe extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jSplitPane1 = new javax.swing.JSplitPane();
+        SplitPane = new javax.swing.JSplitPane();
         topPanel = new javax.swing.JPanel();
         tittleLabel = new javax.swing.JLabel();
         bottomPanel = new javax.swing.JPanel();
@@ -37,7 +40,7 @@ public class lab5mainJframe extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
+        SplitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
         tittleLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         tittleLabel.setText("Welcome");
@@ -59,7 +62,7 @@ public class lab5mainJframe extends javax.swing.JFrame {
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
-        jSplitPane1.setTopComponent(topPanel);
+        SplitPane.setTopComponent(topPanel);
 
         newPatientButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         newPatientButton.setText("New Patient");
@@ -120,17 +123,17 @@ public class lab5mainJframe extends javax.swing.JFrame {
                 .addContainerGap(317, Short.MAX_VALUE))
         );
 
-        jSplitPane1.setRightComponent(bottomPanel);
+        SplitPane.setRightComponent(bottomPanel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1)
+            .addComponent(SplitPane)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1)
+            .addComponent(SplitPane)
         );
 
         pack();
@@ -150,6 +153,8 @@ public class lab5mainJframe extends javax.swing.JFrame {
 
     private void sysAdminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sysAdminButtonActionPerformed
         // TODO add your handling code here:
+        AdminPanel adminPanel = new AdminPanel(); // creation new panel
+        SplitPane.setBottomComponent(adminPanel);
     }//GEN-LAST:event_sysAdminButtonActionPerformed
 
     /**
@@ -188,10 +193,10 @@ public class lab5mainJframe extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JSplitPane SplitPane;
     private javax.swing.JPanel bottomPanel;
     private javax.swing.JButton doctorButton;
     private javax.swing.JButton existPatientButton;
-    private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JButton newPatientButton;
     private javax.swing.JButton sysAdminButton;
     private javax.swing.JLabel tittleLabel;

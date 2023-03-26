@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author yulon
  */
-public class System {
+public class MedicalSystem {
     DoctorDirectory doctorDirs;
     PatientDirectory patientDirs;
     PeopleDirectory peopleDirs;
@@ -18,9 +18,9 @@ public class System {
     ArrayList<Community> communities;
     ArrayList<String> cities;
     
-    private static volatile System instance = null;
+    private static volatile MedicalSystem instance = null;
     
-    private System(){
+    private MedicalSystem(){
         doctorDirs = DoctorDirectory.getInstance();
         patientDirs = PatientDirectory.getInstance();
         peopleDirs = PeopleDirectory.getInstance();
@@ -28,11 +28,11 @@ public class System {
         communities = new ArrayList<Community>();
     }
     
-    public static System getInstance(){
+    public static MedicalSystem getInstance(){
         if(instance == null){
-            synchronized(System.class){
+            synchronized(MedicalSystem.class){
                 if(instance == null){
-                    instance = new System();
+                    instance = new MedicalSystem();
                 }
             }
         }
