@@ -4,6 +4,7 @@
  */
 package infolab5;
 
+import java.awt.CardLayout;
 import static java.awt.image.ImageObserver.HEIGHT;
 import javax.swing.JOptionPane;
 
@@ -32,8 +33,7 @@ public class lab5mainJframe extends javax.swing.JFrame {
         SplitPane = new javax.swing.JSplitPane();
         topPanel = new javax.swing.JPanel();
         newPatientButton = new javax.swing.JButton();
-        existPatientButton = new javax.swing.JButton();
-        doctorButton = new javax.swing.JButton();
+        newEncounterButton = new javax.swing.JButton();
         sysAdminButton = new javax.swing.JButton();
         bottomPanel = new javax.swing.JPanel();
 
@@ -49,19 +49,11 @@ public class lab5mainJframe extends javax.swing.JFrame {
             }
         });
 
-        existPatientButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
-        existPatientButton.setText("Existing Patient");
-        existPatientButton.addActionListener(new java.awt.event.ActionListener() {
+        newEncounterButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
+        newEncounterButton.setText("New Encounter");
+        newEncounterButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                existPatientButtonActionPerformed(evt);
-            }
-        });
-
-        doctorButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
-        doctorButton.setText("Doctor");
-        doctorButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                doctorButtonActionPerformed(evt);
+                newEncounterButtonActionPerformed(evt);
             }
         });
 
@@ -78,26 +70,23 @@ public class lab5mainJframe extends javax.swing.JFrame {
         topPanelLayout.setHorizontalGroup(
             topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(topPanelLayout.createSequentialGroup()
-                .addGap(287, 287, 287)
-                .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(existPatientButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(newPatientButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(doctorButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(sysAdminButton, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(288, Short.MAX_VALUE))
+                .addGap(37, 37, 37)
+                .addComponent(newPatientButton, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75)
+                .addComponent(newEncounterButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addComponent(sysAdminButton, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47))
         );
         topPanelLayout.setVerticalGroup(
             topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(topPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(newPatientButton)
-                .addGap(38, 38, 38)
-                .addComponent(existPatientButton)
-                .addGap(37, 37, 37)
-                .addComponent(doctorButton)
-                .addGap(43, 43, 43)
-                .addComponent(sysAdminButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(newPatientButton)
+                    .addComponent(newEncounterButton)
+                    .addComponent(sysAdminButton))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         SplitPane.setTopComponent(topPanel);
@@ -133,24 +122,24 @@ public class lab5mainJframe extends javax.swing.JFrame {
         // TODO add your handling code here:
         NewPatientPanel newPatientPanel = new NewPatientPanel(); // create new panel
         SplitPane.setBottomComponent(newPatientPanel);    
+        CardLayout layout = (CardLayout) bottomPanel.getLayout();
+        layout.next(bottomPanel);
     }//GEN-LAST:event_newPatientButtonActionPerformed
 
-    private void existPatientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_existPatientButtonActionPerformed
+    private void newEncounterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newEncounterButtonActionPerformed
         // TODO add your handling code here:
-        ExistingPatientPanel existingPatientPanel = new ExistingPatientPanel(); // create new panel
-        SplitPane.setBottomComponent(existingPatientPanel);
-    }//GEN-LAST:event_existPatientButtonActionPerformed
-
-    private void doctorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctorButtonActionPerformed
-        // TODO add your handling code here:
-        DoctorPanel doctorPanel = new DoctorPanel(); // creation new panel
-        SplitPane.setBottomComponent(doctorPanel);
-    }//GEN-LAST:event_doctorButtonActionPerformed
+        NewEncounterPanel newEncounterPanel = new NewEncounterPanel(); // create new panel
+        SplitPane.setBottomComponent(newEncounterPanel);
+        CardLayout layout = (CardLayout) bottomPanel.getLayout();
+        layout.next(bottomPanel);
+    }//GEN-LAST:event_newEncounterButtonActionPerformed
 
     private void sysAdminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sysAdminButtonActionPerformed
         // TODO add your handling code here:
         AdminPanel adminPanel = new AdminPanel(); // creation new panel
         SplitPane.setBottomComponent(adminPanel);
+        CardLayout layout = (CardLayout) bottomPanel.getLayout();
+        layout.next(bottomPanel);
     }//GEN-LAST:event_sysAdminButtonActionPerformed
                                
     /**
@@ -191,8 +180,7 @@ public class lab5mainJframe extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JSplitPane SplitPane;
     private javax.swing.JPanel bottomPanel;
-    private javax.swing.JButton doctorButton;
-    private javax.swing.JButton existPatientButton;
+    private javax.swing.JButton newEncounterButton;
     private javax.swing.JButton newPatientButton;
     private javax.swing.JButton sysAdminButton;
     private javax.swing.JPanel topPanel;
