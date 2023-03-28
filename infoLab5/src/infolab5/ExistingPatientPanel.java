@@ -4,6 +4,14 @@
  */
 package infolab5;
 
+import java.awt.event.ActionEvent;
+import javax.swing.table.DefaultTableModel;
+import model.Address;
+import model.Hospital;
+import model.HospitalDirectory;
+import model.Patient;
+import model.PatientDirectory;
+
 /**
  *
  * @author yulon
@@ -15,6 +23,7 @@ public class ExistingPatientPanel extends javax.swing.JPanel {
      */
     public ExistingPatientPanel() {
         initComponents();
+        poplutateTable();
     }
 
     /**
@@ -39,11 +48,10 @@ public class ExistingPatientPanel extends javax.swing.JPanel {
         jTable1 = new javax.swing.JTable();
         addButton = new javax.swing.JButton();
         updateButton = new javax.swing.JButton();
-        searchButton = new javax.swing.JButton();
+        viewButton = new javax.swing.JButton();
         idDisplayLabel = new javax.swing.JLabel();
         existingPatientPanel = new javax.swing.JScrollPane();
         existingPatientInfo = new javax.swing.JTable();
-        adminButton = new javax.swing.JButton();
         titleLabel = new javax.swing.JLabel();
 
         phoneNumLabel.setText("Number");
@@ -93,14 +101,12 @@ public class ExistingPatientPanel extends javax.swing.JPanel {
             }
         });
 
-        searchButton.setText("Search");
-        searchButton.addActionListener(new java.awt.event.ActionListener() {
+        viewButton.setText("View");
+        viewButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchButtonActionPerformed(evt);
+                viewButtonActionPerformed(evt);
             }
         });
-
-        idDisplayLabel.setText("ID display");
 
         existingPatientInfo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -122,13 +128,6 @@ public class ExistingPatientPanel extends javax.swing.JPanel {
             }
         });
         existingPatientPanel.setViewportView(existingPatientInfo);
-
-        adminButton.setText("MainMenu");
-        adminButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminButtonActionPerformed(evt);
-            }
-        });
 
         titleLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         titleLabel.setText("Existing Patient");
@@ -163,11 +162,14 @@ public class ExistingPatientPanel extends javax.swing.JPanel {
                                         .addComponent(idDisplayLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(addButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(nameField, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addGap(103, 103, 103)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(searchButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(updateButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(adminButton, javax.swing.GroupLayout.Alignment.LEADING)))))))
+                                    .addGap(71, 71, 71)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(88, 88, 88)
+                                            .addComponent(viewButton))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addGap(128, 128, 128)
+                                            .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
                 .addGap(89, 89, 89))
             .addGroup(layout.createSequentialGroup()
                 .addGap(218, 218, 218)
@@ -188,10 +190,7 @@ public class ExistingPatientPanel extends javax.swing.JPanel {
                     .addComponent(updateButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(searchButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(adminButton))
+                    .addComponent(viewButton, javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -228,20 +227,35 @@ public class ExistingPatientPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_updateButtonActionPerformed
 
-    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+    private void viewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_searchButtonActionPerformed
+    }//GEN-LAST:event_viewButtonActionPerformed
 
-    private void adminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_adminButtonActionPerformed
-
-
+    public void poplutateTable() {
+        DefaultTableModel model = (DefaultTableModel) existingPatientInfo.getModel();
+        model.setRowCount(0);
+        // still need to filter out hospitals which are not in the same community
+        for (Patient p : PatientDirectory.getInstance().getPatients()) {
+            Object[] row = new Object[4];
+            Address address = p.getAddress();
+            row[0] = p;
+            row[1] = p.getID();
+            row[2] = p.getPhoneNumber();
+            row[3] = address.getHouse() + "," + address.getComm().getName() + "," + address.getCity();
+            model.addRow(row);
+        }
+        clearFields();
+    }
+    
+    private void clearFields() {
+        nameField.setText("");
+        numberField.setText("");
+        addressField.setText("");
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.JTextField addressField;
     private javax.swing.JLabel addressLabel;
-    private javax.swing.JButton adminButton;
     private javax.swing.JButton deletButton;
     private javax.swing.JLabel encounterInfoLabel;
     private javax.swing.JScrollPane encounterInfojScrollPanel;
@@ -254,8 +268,8 @@ public class ExistingPatientPanel extends javax.swing.JPanel {
     private javax.swing.JLabel nameLabel;
     private javax.swing.JTextField numberField;
     private javax.swing.JLabel phoneNumLabel;
-    private javax.swing.JButton searchButton;
     private javax.swing.JLabel titleLabel;
     private javax.swing.JButton updateButton;
+    private javax.swing.JButton viewButton;
     // End of variables declaration//GEN-END:variables
 }

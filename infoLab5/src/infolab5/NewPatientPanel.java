@@ -4,12 +4,14 @@
  */
 package infolab5;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Address;
 import model.Community;
 import model.Hospital;
 import model.HospitalDirectory;
 import model.Patient;
+import model.PatientDirectory;
 
 /**
  *
@@ -22,6 +24,7 @@ public class NewPatientPanel extends javax.swing.JPanel {
      */
     public NewPatientPanel() {
         initComponents();
+        poplutateTable();
     }
 
     /**
@@ -63,7 +66,7 @@ public class NewPatientPanel extends javax.swing.JPanel {
         ));
         hospital.setViewportView(hospitalTable);
 
-        backButton.setText("Back");
+        backButton.setText("To ExistingPanel(Test)");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
@@ -149,11 +152,12 @@ public class NewPatientPanel extends javax.swing.JPanel {
                         .addGap(335, 335, 335)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(submitButton)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(306, 306, 306)
-                        .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(submitButton))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(221, 221, 221))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,7 +181,7 @@ public class NewPatientPanel extends javax.swing.JPanel {
                     .addComponent(addressLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cityField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(numberLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(numberField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
@@ -219,23 +223,36 @@ public class NewPatientPanel extends javax.swing.JPanel {
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         // TODO add your handling code here:
         Patient patient = new Patient();
-        patient.setID(WIDTH);
+        patient.setID(0); // still need to generate random ID
         patient.setName(nameField.getText());
-        patient.setPhoneNumber(Long.parseLong(numberField.getText()));
+        try{
+            patient.setPhoneNumber(Long.parseLong(numberField.getText()));
+        }catch(NumberFormatException nfe){
+            JOptionPane.showMessageDialog(this, "Phone number and age should be in numbers only!",
+                        "Invalid Input", HEIGHT);
+        }
 
         Community comm = new Community();
         Address address = new Address(cityField.getText(), addressField.getText(), comm);
         patient.setAddress(address);
+        
+        PatientDirectory.getInstance().addPatient(patient);
+        
+        JOptionPane.showMessageDialog(this, "Patient Information is added successfully.");
+        poplutateTable();
     }//GEN-LAST:event_submitButtonActionPerformed
 
     public void poplutateTable() {
         DefaultTableModel model = (DefaultTableModel) hospitalTable.getModel();
         model.setRowCount(0);
+        // still need to filter out hospitals which are not in the same community
         for (Hospital h : HospitalDirectory.getInstance().getHospitals()) {
-            Object[] row = new Object[2];
-            row[0] = h;
-            row[1] = h.getComm().getName() + "," + h.getCity();
-            model.addRow(row);
+            if(h.getComm().getName() == communityField.getText()){
+                Object[] row = new Object[2];
+                row[0] = h;
+                row[1] = h.getComm().getName() + "," + h.getCity();
+                model.addRow(row);
+            }
         }
         clearFields();
     }

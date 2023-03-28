@@ -15,7 +15,9 @@ public class PatientDirectory {
     
     private static volatile PatientDirectory instance = null;
     
-    private PatientDirectory(){}
+    private PatientDirectory(){
+        patients = new ArrayList<Patient>();
+    }
     
     public static PatientDirectory getInstance(){
         if(instance == null){

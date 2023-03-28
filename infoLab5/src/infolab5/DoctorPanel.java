@@ -42,7 +42,6 @@ public class DoctorPanel extends javax.swing.JPanel {
         addButton = new javax.swing.JButton();
         updateButton = new javax.swing.JButton();
         adminButton = new javax.swing.JButton();
-        newEncounterButton = new javax.swing.JButton();
 
         tittleLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         tittleLabel.setText("Doctor Info");
@@ -103,9 +102,6 @@ public class DoctorPanel extends javax.swing.JPanel {
 
         adminButton.setText("Admin");
 
-        newEncounterButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
-        newEncounterButton.setText("New Encounter");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -131,20 +127,17 @@ public class DoctorPanel extends javax.swing.JPanel {
                         .addComponent(updateButton))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(254, 254, 254)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(newEncounterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(nameLabel)
-                                    .addComponent(phoneNumLabel)
-                                    .addComponent(hospitalLabel)
-                                    .addComponent(doctorIDLabel))
-                                .addGap(87, 87, 87)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(hospitalField)
-                                    .addComponent(phoneNumField)
-                                    .addComponent(nameField)
-                                    .addComponent(idDisplayLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nameLabel)
+                            .addComponent(phoneNumLabel)
+                            .addComponent(hospitalLabel)
+                            .addComponent(doctorIDLabel))
+                        .addGap(87, 87, 87)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(hospitalField)
+                            .addComponent(phoneNumField)
+                            .addComponent(nameField)
+                            .addComponent(idDisplayLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(94, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -177,9 +170,7 @@ public class DoctorPanel extends javax.swing.JPanel {
                     .addComponent(hospitalField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addComponent(adminButton)
-                .addGap(87, 87, 87)
-                .addComponent(newEncounterButton)
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addContainerGap(262, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -208,7 +199,6 @@ public class DoctorPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameField;
     private javax.swing.JLabel nameLabel;
-    private javax.swing.JButton newEncounterButton;
     private javax.swing.JTextField phoneNumField;
     private javax.swing.JLabel phoneNumLabel;
     private javax.swing.JLabel tittleLabel;
