@@ -31,38 +31,15 @@ public class lab5mainJframe extends javax.swing.JFrame {
 
         SplitPane = new javax.swing.JSplitPane();
         topPanel = new javax.swing.JPanel();
-        tittleLabel = new javax.swing.JLabel();
-        bottomPanel = new javax.swing.JPanel();
         newPatientButton = new javax.swing.JButton();
         existPatientButton = new javax.swing.JButton();
         doctorButton = new javax.swing.JButton();
         sysAdminButton = new javax.swing.JButton();
+        bottomPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         SplitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
-
-        tittleLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        tittleLabel.setText("Welcome");
-
-        javax.swing.GroupLayout topPanelLayout = new javax.swing.GroupLayout(topPanel);
-        topPanel.setLayout(topPanelLayout);
-        topPanelLayout.setHorizontalGroup(
-            topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(topPanelLayout.createSequentialGroup()
-                .addGap(310, 310, 310)
-                .addComponent(tittleLabel)
-                .addContainerGap(336, Short.MAX_VALUE))
-        );
-        topPanelLayout.setVerticalGroup(
-            topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(topPanelLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(tittleLabel)
-                .addContainerGap(35, Short.MAX_VALUE))
-        );
-
-        SplitPane.setTopComponent(topPanel);
 
         newPatientButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         newPatientButton.setText("New Patient");
@@ -96,23 +73,23 @@ public class lab5mainJframe extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout bottomPanelLayout = new javax.swing.GroupLayout(bottomPanel);
-        bottomPanel.setLayout(bottomPanelLayout);
-        bottomPanelLayout.setHorizontalGroup(
-            bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bottomPanelLayout.createSequentialGroup()
-                .addContainerGap(270, Short.MAX_VALUE)
-                .addGroup(bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+        javax.swing.GroupLayout topPanelLayout = new javax.swing.GroupLayout(topPanel);
+        topPanel.setLayout(topPanelLayout);
+        topPanelLayout.setHorizontalGroup(
+            topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(topPanelLayout.createSequentialGroup()
+                .addGap(287, 287, 287)
+                .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(existPatientButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(newPatientButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(doctorButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(sysAdminButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(305, 305, 305))
+                    .addComponent(sysAdminButton, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(288, Short.MAX_VALUE))
         );
-        bottomPanelLayout.setVerticalGroup(
-            bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bottomPanelLayout.createSequentialGroup()
-                .addGap(140, 140, 140)
+        topPanelLayout.setVerticalGroup(
+            topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(topPanelLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(newPatientButton)
                 .addGap(38, 38, 38)
                 .addComponent(existPatientButton)
@@ -120,7 +97,20 @@ public class lab5mainJframe extends javax.swing.JFrame {
                 .addComponent(doctorButton)
                 .addGap(43, 43, 43)
                 .addComponent(sysAdminButton)
-                .addContainerGap(317, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        SplitPane.setTopComponent(topPanel);
+
+        javax.swing.GroupLayout bottomPanelLayout = new javax.swing.GroupLayout(bottomPanel);
+        bottomPanel.setLayout(bottomPanelLayout);
+        bottomPanelLayout.setHorizontalGroup(
+            bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 750, Short.MAX_VALUE)
+        );
+        bottomPanelLayout.setVerticalGroup(
+            bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 699, Short.MAX_VALUE)
         );
 
         SplitPane.setRightComponent(bottomPanel);
@@ -205,7 +195,6 @@ public class lab5mainJframe extends javax.swing.JFrame {
     private javax.swing.JButton existPatientButton;
     private javax.swing.JButton newPatientButton;
     private javax.swing.JButton sysAdminButton;
-    private javax.swing.JLabel tittleLabel;
     private javax.swing.JPanel topPanel;
     // End of variables declaration//GEN-END:variables
 }
