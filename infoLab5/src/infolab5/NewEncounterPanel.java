@@ -8,12 +8,12 @@ package infolab5;
  *
  * @author User
  */
-public class NewEncounterJPanel extends javax.swing.JPanel {
+public class NewEncounterPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form doctorJPanel
      */
-    public NewEncounterJPanel() {
+    public NewEncounterPanel() {
         initComponents();
     }
 
