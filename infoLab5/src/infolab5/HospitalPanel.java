@@ -211,7 +211,7 @@ public class HospitalPanel extends javax.swing.JPanel {
             hospital.setComm(comm);
             hospital.setCity(comm.getCity());
         }
-        
+        poplutateTable();
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void hospitalFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hospitalFieldActionPerformed
@@ -246,6 +246,37 @@ public class HospitalPanel extends javax.swing.JPanel {
 
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
         // TODO add your handling code here:
+        Hospital hospital;
+        int selectedIndex = hospitalTable.getSelectedRow();
+        if (selectedIndex < 0) {
+            JOptionPane.showMessageDialog(this, "Please select a row to be updated", "Error - No selection", JOptionPane.WARNING_MESSAGE);
+        } else {
+            DefaultTableModel model = (DefaultTableModel) hospitalTable.getModel();
+            hospital = (Hospital) model.getValueAt(selectedIndex, 0);
+            
+            
+            
+            // same as add button
+            hospital.setName(hospitalField.getText());
+            for(Community comm : MedicalSystem.getInstance().getCommunities()){
+                if(comm.getName() == communityField.getText() && comm.getCity() == cityField.getText()){
+                    hospital.setComm(comm);
+                    hospital.setCity(comm.getCity());
+                    comm.addHospital(hospital);
+                }
+            }
+
+            if(hospital.getComm() == null){
+                Community comm = new Community();
+                comm.setName(communityField.getText());
+                comm.setCity(cityField.getText());
+                comm.addHospital(hospital);
+                hospital.setComm(comm);
+                hospital.setCity(comm.getCity());
+            }
+        }
+        
+        poplutateTable();
     }//GEN-LAST:event_updateButtonActionPerformed
 
 
@@ -253,8 +284,8 @@ public class HospitalPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) hospitalTable.getModel();
         model.setRowCount(0);
         for (Hospital h : HospitalDirectory.getInstance().getHospitals()) {
-            Object[] row = new Object[2];
-            row[0] = h.getName();
+            Object[] row = new Object[3];
+            row[0] = h;
             row[1] = h.getComm().getName();
             row[2] = h.getCity();
             model.addRow(row);

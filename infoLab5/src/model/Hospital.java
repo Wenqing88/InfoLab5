@@ -36,5 +36,10 @@ public class Hospital {
     public void setComm(Community comm) {
         this.comm = comm;
     }
+
+    @Override
+    public String toString() {
+        return this.name;
+    }
     
 }

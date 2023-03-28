@@ -1,19 +1,19 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package infolab5;
 
 /**
  *
- * @author wenqing-mbp16
+ * @author yulon
  */
-public class existingPatient extends javax.swing.JFrame {
+public class ExistingPatientPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form existingPatient
+     * Creates new form ExistingPatientPanel1
      */
-    public existingPatient() {
+    public ExistingPatientPanel() {
         initComponents();
     }
 
@@ -26,35 +26,40 @@ public class existingPatient extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        titleLabel = new javax.swing.JLabel();
+        phoneNumLabel = new javax.swing.JLabel();
         idLabel = new javax.swing.JLabel();
+        addressLabel = new javax.swing.JLabel();
         encounterInfoLabel = new javax.swing.JLabel();
+        numberField = new javax.swing.JTextField();
         nameField = new javax.swing.JTextField();
+        addressField = new javax.swing.JTextField();
         nameLabel = new javax.swing.JLabel();
+        deletButton = new javax.swing.JButton();
         encounterInfojScrollPanel = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        addButton = new javax.swing.JButton();
+        updateButton = new javax.swing.JButton();
         searchButton = new javax.swing.JButton();
+        idDisplayLabel = new javax.swing.JLabel();
         existingPatientPanel = new javax.swing.JScrollPane();
         existingPatientInfo = new javax.swing.JTable();
         adminButton = new javax.swing.JButton();
-        phoneNumLabel = new javax.swing.JLabel();
-        addressLabel = new javax.swing.JLabel();
-        numberField = new javax.swing.JTextField();
-        addressField = new javax.swing.JTextField();
-        deletButton = new javax.swing.JButton();
-        addButton = new javax.swing.JButton();
-        updateButton = new javax.swing.JButton();
-        idDisplayLabel = new javax.swing.JLabel();
+        titleLabel = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        titleLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        titleLabel.setText("Existing Patient");
+        phoneNumLabel.setText("Number");
 
         idLabel.setText("ID");
 
+        addressLabel.setText("Address");
+
         encounterInfoLabel.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         encounterInfoLabel.setText("Encounter Info");
+
+        numberField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                numberFieldActionPerformed(evt);
+            }
+        });
 
         nameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,6 +68,8 @@ public class existingPatient extends javax.swing.JFrame {
         });
 
         nameLabel.setText("Name");
+
+        deletButton.setText("Delete");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -77,12 +84,23 @@ public class existingPatient extends javax.swing.JFrame {
         ));
         encounterInfojScrollPanel.setViewportView(jTable1);
 
+        addButton.setText("Add");
+
+        updateButton.setText("Update");
+        updateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateButtonActionPerformed(evt);
+            }
+        });
+
         searchButton.setText("Search");
         searchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchButtonActionPerformed(evt);
             }
         });
+
+        idDisplayLabel.setText("ID display");
 
         existingPatientInfo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -107,35 +125,15 @@ public class existingPatient extends javax.swing.JFrame {
 
         adminButton.setText("Admin");
 
-        phoneNumLabel.setText("Number");
+        titleLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        titleLabel.setText("Existing Patient");
 
-        addressLabel.setText("Address");
-
-        numberField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                numberFieldActionPerformed(evt);
-            }
-        });
-
-        deletButton.setText("Delete");
-
-        addButton.setText("Add");
-
-        updateButton.setText("Update");
-        updateButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateButtonActionPerformed(evt);
-            }
-        });
-
-        idDisplayLabel.setText("ID display");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(98, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(encounterInfojScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 563, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,7 +190,7 @@ public class existingPatient extends javax.swing.JFrame {
                     .addComponent(deletButton)
                     .addComponent(addButton)
                     .addComponent(updateButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(searchButton, javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
@@ -219,25 +217,24 @@ public class existingPatient extends javax.swing.JFrame {
                 .addComponent(adminButton)
                 .addGap(90, 90, 90))
         );
-
-        pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nameFieldActionPerformed
-
-    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_searchButtonActionPerformed
 
     private void numberFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_numberFieldActionPerformed
 
+    private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameFieldActionPerformed
+
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_updateButtonActionPerformed
+
+    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;

@@ -141,14 +141,20 @@ public class lab5mainJframe extends javax.swing.JFrame {
 
     private void newPatientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newPatientButtonActionPerformed
         // TODO add your handling code here:
+        NewPatientPanel newPatientPanel = new NewPatientPanel(); // create new panel
+        SplitPane.setBottomComponent(newPatientPanel);    
     }//GEN-LAST:event_newPatientButtonActionPerformed
 
     private void existPatientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_existPatientButtonActionPerformed
         // TODO add your handling code here:
+        ExistingPatientPanel existingPatientPanel = new ExistingPatientPanel(); // create new panel
+        SplitPane.setBottomComponent(existingPatientPanel);
     }//GEN-LAST:event_existPatientButtonActionPerformed
 
     private void doctorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctorButtonActionPerformed
         // TODO add your handling code here:
+        DoctorPanel doctorPanel = new DoctorPanel(); // creation new panel
+        SplitPane.setBottomComponent(doctorPanel);
     }//GEN-LAST:event_doctorButtonActionPerformed
 
     private void sysAdminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sysAdminButtonActionPerformed
@@ -156,7 +162,7 @@ public class lab5mainJframe extends javax.swing.JFrame {
         AdminPanel adminPanel = new AdminPanel(); // creation new panel
         SplitPane.setBottomComponent(adminPanel);
     }//GEN-LAST:event_sysAdminButtonActionPerformed
-
+                               
     /**
      * @param args the command line arguments
      */

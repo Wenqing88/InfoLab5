@@ -13,6 +13,12 @@ public class Address {
     String house;
     Community comm;
 
+    public Address(String city, String house, Community comm) {
+        this.city = city;
+        this.house = house;
+        this.comm = comm;
+    }
+
     public String getCity() {
         return city;
     }

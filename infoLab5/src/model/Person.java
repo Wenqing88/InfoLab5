@@ -10,6 +10,7 @@ package model;
  */
 public class Person {
     String name;
+    long phoneNumber;
     int ID;
     Address address;
 
@@ -35,6 +36,14 @@ public class Person {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public long getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(long phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
     
     

@@ -27,4 +27,16 @@ public class PatientDirectory {
         }
         return instance;
     }
+
+    public ArrayList<Patient> getPatients() {
+        return patients;
+    }
+
+    public void setPatients(ArrayList<Patient> patients) {
+        this.patients = patients;
+    }
+    
+    public void addPatient(Patient patient){
+        this.patients.add(patient);
+    }
 }
