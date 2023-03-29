@@ -7,7 +7,7 @@ package infolab5;
 import model.Encounter;
 import model.Patient;
 import model.PatientDirectory;
-
+import model.VitalSign;
 /**
  *
  * @author User
@@ -175,6 +175,15 @@ public class NewEncounterPanel extends javax.swing.JPanel {
 
         Encounter encounter = new Encounter();
         // TODO add your handling code here:
+        VitalSign vs = new VitalSign();
+        encounter.setVitalSign(vs);
+        vs.setBloodPressure(Integer.parseInt(bloodPressureField.getText()));
+        vs.setHeartRate(Integer.parseInt(heartRateField.getText()));
+        vs.setBloodPressure(Integer.parseInt(bloodPressureField.getText()));
+        vs.setTemperature(Float.parseFloat(bodyTempField.getText()));
+
+    
+        
         
         
         for(Patient p : PatientDirectory.getInstance().getPatients()){
