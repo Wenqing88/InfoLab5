@@ -13,6 +13,10 @@ import java.util.ArrayList;
 public class Patient extends Person {
     ArrayList<Encounter> encounterHistory;
 
+    public Patient() {
+        this.encounterHistory = new ArrayList<Encounter>();
+    }
+
     public ArrayList<Encounter> getEncounterHistory() {
         return encounterHistory;
     }
@@ -21,5 +25,7 @@ public class Patient extends Person {
         this.encounterHistory = encounterHistory;
     }
     
-    
+    public void addEncounterHistory(Encounter encounter) {
+        this.encounterHistory.add(encounter);
+    }
 }
