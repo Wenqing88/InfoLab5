@@ -1,10 +1,16 @@
 package infolab5;
 
+import static java.awt.image.ImageObserver.HEIGHT;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import model.Address;
+import model.Community;
 import model.Doctor;
 import model.DoctorDirectory;
 import model.Hospital;
 import model.HospitalDirectory;
+import model.MedicalSystem;
+import model.Patient;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -22,6 +28,7 @@ public class DoctorPanel extends javax.swing.JPanel {
      */
     public DoctorPanel() {
         initComponents();
+        populateTable();
     }
 
     /**
@@ -190,18 +197,82 @@ public class DoctorPanel extends javax.swing.JPanel {
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         // TODO add your handling code here:
+        Doctor doctor = new Doctor();
+        try {
+            doctor.setPhoneNumber(Long.parseLong(phoneNumField.getText()));
+        } catch (NumberFormatException nfe) {
+            JOptionPane.showMessageDialog(this, "Phone number should be in numbers only!",
+                    "Invalid Input", HEIGHT);
+        }
+
+        doctor.setName(nameField.getText());
+        for (Hospital h : HospitalDirectory.getInstance().getHospitals()) {
+            // might need to determine the hospital by community and city
+            if (hospitalField.getText() == null ? h.getName() == null : hospitalField.getText().equals(h.getName())) {
+                doctor.setHospital(h);
+            }
+        }
+        if(doctor.getHospital() == null){
+            JOptionPane.showMessageDialog(this, "Can't find the hospital!",
+                        "Invalid Input", HEIGHT);
+            return;
+        }
+        DoctorDirectory.getInstance().addDoctor(doctor);
+        JOptionPane.showMessageDialog(this, "Patient Information is updated successfully.");
+        populateTable();
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         // TODO add your handling code here:
+        int selectedIndex = doctorTable.getSelectedRow();
+        if (selectedIndex < 0) {
+            JOptionPane.showMessageDialog(this, "Please select a row to be deleted", "Error - No selection", JOptionPane.WARNING_MESSAGE);
+        } else {
+            DefaultTableModel model = (DefaultTableModel) doctorTable.getModel();
+            Doctor selectedDoctor = (Doctor) model.getValueAt(selectedIndex, 0);
+            DoctorDirectory.getInstance().removeDoctor(selectedDoctor);
+            JOptionPane.showMessageDialog(this, "Doctor Information is deleted successfully.");
+            populateTable();
+        }
     }//GEN-LAST:event_deleteButtonActionPerformed
 
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
         // TODO add your handling code here:
+        Doctor selectedDoctor;
+        int selectedIndex = doctorTable.getSelectedRow();
+        if (selectedIndex < 0) {
+            JOptionPane.showMessageDialog(this, "Please select a row to be updated", "Error - No selection", JOptionPane.WARNING_MESSAGE);
+        } else {
+            DefaultTableModel model = (DefaultTableModel) doctorTable.getModel();
+            selectedDoctor = (Doctor) model.getValueAt(selectedIndex, 0);
+            try{
+                selectedDoctor.setPhoneNumber(Long.parseLong(phoneNumField.getText()));
+            } catch(NumberFormatException nfe){
+                JOptionPane.showMessageDialog(this, "Phone number should be in numbers only!",
+                        "Invalid Input", HEIGHT);
+            }
+            
+            selectedDoctor.setName(nameField.getText());
+            for(Hospital h : HospitalDirectory.getInstance().getHospitals()){
+                // might need to determine the hospital by community and city
+                if(hospitalField.getText() == null ? h.getName() == null : hospitalField.getText().equals(h.getName())){
+                    selectedDoctor.setHospital(h);
+                }
+            }
+
+            if(selectedDoctor.getHospital() == null){
+                JOptionPane.showMessageDialog(this, "Can't find the hospital!",
+                            "Invalid Input", HEIGHT);
+                return;
+            }
+            DoctorDirectory.getInstance().addDoctor(selectedDoctor);
+            JOptionPane.showMessageDialog(this, "Patient Information is updated successfully.");
+            populateTable();
+        }
     }//GEN-LAST:event_updateButtonActionPerformed
 
 
-    public void poplutateTable() {
+    public void populateTable() {
         DefaultTableModel model = (DefaultTableModel) doctorTable.getModel();
         model.setRowCount(0);
         for (Doctor d : DoctorDirectory.getInstance().getAllDoctors()) {

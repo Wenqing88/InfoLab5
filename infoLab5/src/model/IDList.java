@@ -12,15 +12,12 @@ import java.util.ArrayList;
  * @author yulon
  */
 public class IDList {
-    ArrayList<Integer> patientIDs;
-    ArrayList<Integer> doctorIDs;
-    
+    ArrayList<Integer> IDs;
     
     private static volatile IDList instance = null;
     
     private IDList(){
-        patientIDs = new ArrayList<>();
-        doctorIDs = new ArrayList<>();
+        IDs = new ArrayList<>();
     }
     
     public static IDList getInstance(){
@@ -34,19 +31,12 @@ public class IDList {
         return instance;
     }
     
-    public ArrayList<Integer> getPatientIDs(){
-        return this.patientIDs;
-    }
-    
-    public ArrayList<Integer> getDoctorIDs(){
-        return this.doctorIDs;
+    public ArrayList<Integer> getIDs(){
+        return this.IDs;
     }
     
     public void addPatientID(int id){
-        this.patientIDs.add(id);
+        this.IDs.add(id);
     }
     
-    public void addDoctorID(int id){
-        this.doctorIDs.add(id);
-    }
 }

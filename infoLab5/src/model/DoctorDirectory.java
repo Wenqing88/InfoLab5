@@ -42,4 +42,11 @@ public class DoctorDirectory {
         return newhos;
     }
     
+    public void addDoctor(Doctor doc){
+        this.doctors.add(doc);
+    }
+    
+    public void removeDoctor(Doctor doc){
+        this.doctors.remove(doc);
+    }
 }

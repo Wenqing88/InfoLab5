@@ -4,6 +4,14 @@
  */
 package infolab5;
 
+import static java.awt.image.ImageObserver.HEIGHT;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import model.Doctor;
+import model.DoctorDirectory;
 import model.Encounter;
 import model.Patient;
 import model.PatientDirectory;
@@ -175,19 +183,34 @@ public class NewEncounterPanel extends javax.swing.JPanel {
         Encounter encounter = new Encounter();
         // TODO add your handling code here:
         VitalSign vs = new VitalSign();
-        encounter.setVitalSign(vs);
         vs.setBloodPressure(Integer.parseInt(bloodPressureField.getText()));
         vs.setHeartRate(Integer.parseInt(heartRateField.getText()));
-        vs.setBloodPressure(Integer.parseInt(bloodPressureField.getText()));
         vs.setTemperature(Float.parseFloat(bodyTempField.getText()));
+        encounter.setVitalSign(vs);
 
-    
+        // set doctor and date
+        try {
+            encounter.setDate(new SimpleDateFormat("dd/MM/yyyy").parse(dateField.getText()));
+        } catch (ParseException ex) {
+            JOptionPane.showMessageDialog(this, "date format must be dd/MM/yyyy!",
+                        "Invalid Input", HEIGHT);
+        }
         
-        
-        
+        for(Doctor d : DoctorDirectory.getInstance().getAllDoctors()){
+            if(docIDField.getText() == String.valueOf(d.getID())){
+                encounter.setDoctor(d);
+            }
+        }
+        if(encounter.getDoctor() == null){
+            JOptionPane.showMessageDialog(this, "Can't find doctor with the ID!",
+                        "Invalid Input", HEIGHT);
+            return;
+        }
         for(Patient p : PatientDirectory.getInstance().getPatients()){
             if(patientIDField.getText() == String.valueOf(p.getID())){
                 p.addEncounterHistory(encounter);
+                JOptionPane.showMessageDialog(this, "Encounter Information is added successfully.");
+                return;
             }
         }
     }//GEN-LAST:event_submitButtonActionPerformed
