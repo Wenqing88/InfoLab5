@@ -41,7 +41,6 @@ public class DoctorPanel extends javax.swing.JPanel {
         deleteButton = new javax.swing.JButton();
         addButton = new javax.swing.JButton();
         updateButton = new javax.swing.JButton();
-        adminButton = new javax.swing.JButton();
 
         tittleLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         tittleLabel.setText("Doctor Info");
@@ -100,13 +99,6 @@ public class DoctorPanel extends javax.swing.JPanel {
 
         updateButton.setText("Update");
 
-        adminButton.setText("Admin");
-        adminButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -122,12 +114,9 @@ public class DoctorPanel extends javax.swing.JPanel {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(152, 152, 152)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(adminButton)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(deleteButton)
-                                .addGap(104, 104, 104)
-                                .addComponent(addButton)))
+                        .addComponent(deleteButton)
+                        .addGap(104, 104, 104)
+                        .addComponent(addButton)
                         .addGap(115, 115, 115)
                         .addComponent(updateButton))
                     .addGroup(layout.createSequentialGroup()
@@ -173,9 +162,7 @@ public class DoctorPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(hospitalLabel)
                     .addComponent(hospitalField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addComponent(adminButton)
-                .addContainerGap(262, Short.MAX_VALUE))
+                .addContainerGap(313, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -191,14 +178,9 @@ public class DoctorPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_addButtonActionPerformed
 
-    private void adminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_adminButtonActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
-    private javax.swing.JButton adminButton;
     private javax.swing.JButton deleteButton;
     private javax.swing.JLabel doctorIDLabel;
     private javax.swing.JTable doctorTable;

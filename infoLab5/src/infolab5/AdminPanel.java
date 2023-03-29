@@ -4,6 +4,8 @@
  */
 package infolab5;
 
+import java.awt.CardLayout;
+
 /**
  *
  * @author User
@@ -26,23 +28,24 @@ public class AdminPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        tittleLabel = new javax.swing.JLabel();
-        hospitalButton = new javax.swing.JButton();
-        doctorButton = new javax.swing.JButton();
+        splitPane = new javax.swing.JSplitPane();
+        topPanel = new javax.swing.JPanel();
         patientButton = new javax.swing.JButton();
+        doctorButton = new javax.swing.JButton();
+        hospitalButton = new javax.swing.JButton();
+        bottomPanel = new javax.swing.JPanel();
 
-        tittleLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        tittleLabel.setText("Administrator");
+        splitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        hospitalButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
-        hospitalButton.setText("Hospital");
-        hospitalButton.addActionListener(new java.awt.event.ActionListener() {
+        patientButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        patientButton.setText(" Patient");
+        patientButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hospitalButtonActionPerformed(evt);
+                patientButtonActionPerformed(evt);
             }
         });
 
-        doctorButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
+        doctorButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         doctorButton.setText("Doctor");
         doctorButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,62 +53,86 @@ public class AdminPanel extends javax.swing.JPanel {
             }
         });
 
-        patientButton.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        patientButton.setText("Patient");
-        patientButton.addActionListener(new java.awt.event.ActionListener() {
+        hospitalButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        hospitalButton.setText("Hospital");
+        hospitalButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                patientButtonActionPerformed(evt);
+                hospitalButtonActionPerformed(evt);
             }
         });
+
+        javax.swing.GroupLayout topPanelLayout = new javax.swing.GroupLayout(topPanel);
+        topPanel.setLayout(topPanelLayout);
+        topPanelLayout.setHorizontalGroup(
+            topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(topPanelLayout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(patientButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
+                .addComponent(doctorButton)
+                .addGap(151, 151, 151)
+                .addComponent(hospitalButton)
+                .addGap(110, 110, 110))
+        );
+        topPanelLayout.setVerticalGroup(
+            topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(topPanelLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(patientButton)
+                    .addComponent(doctorButton)
+                    .addComponent(hospitalButton))
+                .addContainerGap(42, Short.MAX_VALUE))
+        );
+
+        splitPane.setTopComponent(topPanel);
+
+        bottomPanel.setLayout(new java.awt.CardLayout());
+        splitPane.setRightComponent(bottomPanel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(295, 295, 295)
-                        .addComponent(tittleLabel)
-                        .addGap(0, 311, Short.MAX_VALUE))
-                    .addComponent(hospitalButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(patientButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(doctorButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+            .addComponent(splitPane)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(tittleLabel)
-                .addGap(155, 155, 155)
-                .addComponent(hospitalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(doctorButton, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
-                .addComponent(patientButton, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(196, Short.MAX_VALUE))
+            .addComponent(splitPane)
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void hospitalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hospitalButtonActionPerformed
+    private void patientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientButtonActionPerformed
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_hospitalButtonActionPerformed
+        ExistingPatientPanel existingPatientPanel = new ExistingPatientPanel(); // create new panel
+        splitPane.setBottomComponent(existingPatientPanel);    
+        CardLayout layout = (CardLayout) bottomPanel.getLayout();
+        layout.next(bottomPanel);
+    }//GEN-LAST:event_patientButtonActionPerformed
 
     private void doctorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctorButtonActionPerformed
         // TODO add your handling code here:
+        DoctorPanel doctorPanel = new DoctorPanel(); // create new panel
+        splitPane.setBottomComponent(doctorPanel);    
+        CardLayout layout = (CardLayout) bottomPanel.getLayout();
+        layout.next(bottomPanel);
     }//GEN-LAST:event_doctorButtonActionPerformed
 
-    private void patientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientButtonActionPerformed
+    private void hospitalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hospitalButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_patientButtonActionPerformed
+        HospitalPanel hospitalPanel = new HospitalPanel(); // create new panel
+        splitPane.setBottomComponent(hospitalPanel);    
+        CardLayout layout = (CardLayout) bottomPanel.getLayout();
+        layout.next(bottomPanel);
+    }//GEN-LAST:event_hospitalButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel bottomPanel;
     private javax.swing.JButton doctorButton;
     private javax.swing.JButton hospitalButton;
     private javax.swing.JButton patientButton;
-    private javax.swing.JLabel tittleLabel;
+    private javax.swing.JSplitPane splitPane;
+    private javax.swing.JPanel topPanel;
     // End of variables declaration//GEN-END:variables
 }
