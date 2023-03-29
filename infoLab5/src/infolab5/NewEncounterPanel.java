@@ -4,6 +4,10 @@
  */
 package infolab5;
 
+import model.Encounter;
+import model.Patient;
+import model.PatientDirectory;
+
 /**
  *
  * @author User
@@ -53,6 +57,11 @@ public class NewEncounterPanel extends javax.swing.JPanel {
         docIDLabel.setText("Docter ID");
 
         submitButton.setText("Submit");
+        submitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitButtonActionPerformed(evt);
+            }
+        });
 
         patientLabel.setText("Patient");
 
@@ -161,6 +170,19 @@ public class NewEncounterPanel extends javax.swing.JPanel {
                 .addGap(45, 45, 45))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
+
+        Encounter encounter = new Encounter();
+        // TODO add your handling code here:
+        
+        
+        for(Patient p : PatientDirectory.getInstance().getPatients()){
+            if(patientIDField.getText() == String.valueOf(p.getID())){
+                p.addEncounterHistory(encounter);
+            }
+        }
+    }//GEN-LAST:event_submitButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

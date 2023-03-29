@@ -41,4 +41,8 @@ public class PatientDirectory {
     public void addPatient(Patient patient){
         this.patients.add(patient);
     }
+    
+    public void removePatient(Patient patient){
+        this.patients.remove(patient);
+    }
 }
