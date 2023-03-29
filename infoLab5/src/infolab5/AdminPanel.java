@@ -82,7 +82,7 @@ public class AdminPanel extends javax.swing.JPanel {
                     .addComponent(patientButton)
                     .addComponent(doctorButton)
                     .addComponent(hospitalButton))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         splitPane.setTopComponent(topPanel);
