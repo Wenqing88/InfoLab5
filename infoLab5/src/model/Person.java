@@ -4,6 +4,9 @@
  */
 package model;
 
+import java.util.Random;
+import java.util.UUID;
+
 /**
  *
  * @author yulon
@@ -13,7 +16,9 @@ public class Person {
     long phoneNumber;
     int ID;
     Address address;
+    Random rand = new Random();
 
+    
     public String getName() {
         return name;
     }

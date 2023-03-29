@@ -218,7 +218,7 @@ public class DoctorPanel extends javax.swing.JPanel {
             return;
         }
         DoctorDirectory.getInstance().addDoctor(doctor);
-        JOptionPane.showMessageDialog(this, "Patient Information is updated successfully.");
+        JOptionPane.showMessageDialog(this, "Doctor Information is updated successfully.");
         populateTable();
     }//GEN-LAST:event_addButtonActionPerformed
 
