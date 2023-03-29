@@ -30,11 +30,10 @@
               <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="196" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="bodyTempField" alignment="1" min="-2" pref="127" max="-2" attributes="0"/>
-                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="0" pref="154" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="doctorNameLabel" min="-2" max="-2" attributes="0"/>
                               <Component id="docIDLabel" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -42,32 +41,36 @@
                               <Component id="patientIDLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="dateLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="198" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="docNameField" min="-2" max="-2" attributes="0"/>
-                              <Component id="dateField" min="-2" max="-2" attributes="0"/>
-                              <Component id="docIDField" min="-2" max="-2" attributes="0"/>
-                              <Component id="patientNameField" min="-2" max="-2" attributes="0"/>
-                              <Component id="patientIDField" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="vitalSignLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="vitalSignLabel" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="bodyTempLabe" min="-2" max="-2" attributes="0"/>
-                              <Component id="bloodPressureLabel" min="-2" max="-2" attributes="0"/>
-                              <Component id="heartRateLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="116" pref="116" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="heartRateField" pref="127" max="32767" attributes="0"/>
-                              <Component id="bloodPressureField" max="32767" attributes="0"/>
-                          </Group>
+                      <EmptySpace min="-2" pref="187" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="docNameField" pref="111" max="32767" attributes="0"/>
+                          <Component id="docIDField" max="32767" attributes="0"/>
+                          <Component id="patientNameField" max="32767" attributes="0"/>
+                          <Component id="patientIDField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="dateField" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="bodyTempLabe" min="-2" max="-2" attributes="0"/>
+                          <Component id="bloodPressureLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="heartRateLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="116" pref="116" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="bloodPressureField" pref="169" max="32767" attributes="0"/>
+                          <Component id="bodyTempField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="heartRateField" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="189" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="183" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -101,9 +104,9 @@
                   <Component id="dateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="dateField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+              <EmptySpace pref="52" max="32767" attributes="0"/>
               <Component id="vitalSignLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="7" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="heartRateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="heartRateField" alignment="3" min="-2" max="-2" attributes="0"/>
