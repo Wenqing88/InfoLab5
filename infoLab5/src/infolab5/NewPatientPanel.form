@@ -16,51 +16,41 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="208" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="addressLabel" alignment="1" min="-2" pref="111" max="-2" attributes="0"/>
-                          <Component id="nameLabel" alignment="1" min="-2" pref="111" max="-2" attributes="0"/>
-                          <Component id="nearbyHospital" alignment="1" min="-2" pref="111" max="-2" attributes="0"/>
-                          <Component id="addressLabel1" alignment="1" min="-2" pref="111" max="-2" attributes="0"/>
-                          <Component id="addressLabel2" alignment="1" min="-2" pref="111" max="-2" attributes="0"/>
-                          <Component id="numberLabel" alignment="1" min="-2" pref="111" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="hospital" alignment="0" min="-2" pref="350" max="-2" attributes="0"/>
-                          <Component id="addressField" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
-                          <Component id="numberField" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
-                          <Component id="nameField" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
-                          <Component id="communityField" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
-                          <Component id="cityField" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="335" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="titleLabel" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
-                          <Component id="submitButton" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="backButton" min="-2" pref="173" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="221" max="-2" attributes="0"/>
+              <Component id="titleLabel" min="-2" pref="157" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="294" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="208" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="addressLabel" alignment="1" min="-2" pref="111" max="-2" attributes="0"/>
+                  <Component id="nameLabel" alignment="1" min="-2" pref="111" max="-2" attributes="0"/>
+                  <Component id="nearbyHospital" alignment="1" min="-2" pref="111" max="-2" attributes="0"/>
+                  <Component id="addressLabel1" alignment="1" min="-2" pref="111" max="-2" attributes="0"/>
+                  <Component id="addressLabel2" alignment="1" min="-2" pref="111" max="-2" attributes="0"/>
+                  <Component id="numberLabel" alignment="1" min="-2" pref="111" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="submitButton" min="-2" max="-2" attributes="0"/>
+                  <Component id="hospital" alignment="0" min="-2" pref="350" max="-2" attributes="0"/>
+                  <Component id="addressField" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
+                  <Component id="numberField" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
+                  <Component id="nameField" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
+                  <Component id="communityField" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
+                  <Component id="cityField" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="75" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
               <Component id="titleLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="nameField" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="nameLabel" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
@@ -90,11 +80,9 @@
                   <Component id="hospital" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
                   <Component id="nearbyHospital" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
               <Component id="submitButton" min="-2" pref="36" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="backButton" min="-2" pref="36" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+              <EmptySpace pref="207" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -122,14 +110,6 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="backButton">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="To ExistingPanel(Test)"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backButtonActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JLabel" name="titleLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">

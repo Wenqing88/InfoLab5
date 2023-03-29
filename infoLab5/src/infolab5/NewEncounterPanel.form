@@ -16,256 +16,192 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jSplitPane1" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="334" max="-2" attributes="0"/>
+                      <Component id="submitButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="279" max="-2" attributes="0"/>
+                      <Component id="newEcounterLabel" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="0" pref="196" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="bodyTempField" alignment="1" min="-2" pref="127" max="-2" attributes="0"/>
+                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="doctorNameLabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="docIDLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="patientLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="patientIDLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="dateLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="198" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="docNameField" min="-2" max="-2" attributes="0"/>
+                              <Component id="dateField" min="-2" max="-2" attributes="0"/>
+                              <Component id="docIDField" min="-2" max="-2" attributes="0"/>
+                              <Component id="patientNameField" min="-2" max="-2" attributes="0"/>
+                              <Component id="patientIDField" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Component id="vitalSignLabel" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="bodyTempLabe" min="-2" max="-2" attributes="0"/>
+                              <Component id="bloodPressureLabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="heartRateLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="116" pref="116" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="heartRateField" pref="127" max="32767" attributes="0"/>
+                              <Component id="bloodPressureField" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="189" max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="jSplitPane1" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+              <Component id="newEcounterLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="doctorNameLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="docNameField" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="docIDLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="docIDField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="patientNameField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="patientLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="patientIDField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="patientIDLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="dateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="dateField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+              <Component id="vitalSignLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="7" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="heartRateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="heartRateField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="bloodPressureLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="bloodPressureField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="bodyTempLabe" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="bodyTempField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
+              <Component id="submitButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JSplitPane" name="jSplitPane1">
+    <Component class="javax.swing.JLabel" name="bodyTempLabe">
       <Properties>
-        <Property name="orientation" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Body Temperature"/>
       </Properties>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout"/>
-      <SubComponents>
-        <Container class="javax.swing.JPanel" name="jPanel1">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout$JSplitPaneConstraintsDescription">
-              <JSplitPaneConstraints position="top"/>
-            </Constraint>
-          </Constraints>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="288" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="284" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="39" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel1">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="24" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="New Encounter "/>
-              </Properties>
-            </Component>
-          </SubComponents>
-        </Container>
-        <Container class="javax.swing.JPanel" name="jPanel2">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout$JSplitPaneConstraintsDescription">
-              <JSplitPaneConstraints position="right"/>
-            </Constraint>
-          </Constraints>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="vitalSignLabel" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="dateLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="patientIDLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="patientLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="docIDLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="doctorNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="docNameField" pref="130" max="32767" attributes="0"/>
-                                              <Component id="docIDField" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="patientNameField" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="patientIDField" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="dateField" alignment="0" max="32767" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="bodyTempLabe" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="bodyTempField" min="-2" pref="214" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="bloodPressureLabel" min="-2" max="-2" attributes="0"/>
-                                              <Component id="heartRateLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="heartRateField" max="32767" attributes="0"/>
-                                              <Component id="bloodPressureField" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="328" max="-2" attributes="0"/>
-                              <Component id="submitButton" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace pref="208" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="doctorNameLabel" min="-2" max="-2" attributes="0"/>
-                                          <Component id="docNameField" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="docIDLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="docIDField" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="patientLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="patientNameField" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="patientIDLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="patientIDField" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="dateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="dateField" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="vitalSignLabel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="heartRateField" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="heartRateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                      <Component id="bloodPressureField" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="bloodPressureLabel" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                              <Component id="bodyTempField" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="bodyTempLabe" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
-                      <Component id="submitButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="85" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JLabel" name="doctorNameLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Attending Doctor"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="docIDLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Docter ID"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="patientLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Patient"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="patientIDLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Patient ID"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="dateLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Date"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="vitalSignLabel">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Microsoft YaHei UI" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Vital Sign"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="dateField">
-            </Component>
-            <Component class="javax.swing.JTextField" name="patientIDField">
-            </Component>
-            <Component class="javax.swing.JTextField" name="patientNameField">
-            </Component>
-            <Component class="javax.swing.JTextField" name="docIDField">
-            </Component>
-            <Component class="javax.swing.JTextField" name="docNameField">
-            </Component>
-            <Component class="javax.swing.JButton" name="submitButton">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Submit"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="heartRateField">
-            </Component>
-            <Component class="javax.swing.JTextField" name="bloodPressureField">
-            </Component>
-            <Component class="javax.swing.JTextField" name="bodyTempField">
-            </Component>
-            <Component class="javax.swing.JLabel" name="heartRateLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Heart Rate"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="bloodPressureLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Blood Pressure"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="bodyTempLabe">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Body Temperature"/>
-              </Properties>
-            </Component>
-          </SubComponents>
-        </Container>
-      </SubComponents>
-    </Container>
+    </Component>
+    <Component class="javax.swing.JTextField" name="patientIDField">
+    </Component>
+    <Component class="javax.swing.JTextField" name="patientNameField">
+    </Component>
+    <Component class="javax.swing.JTextField" name="docIDField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="doctorNameLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Attending Doctor"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="docNameField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="docIDLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Docter ID"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="submitButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Submit"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="patientLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Patient"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="heartRateField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="patientIDLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Patient ID"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="bloodPressureField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="dateLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Date"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="bodyTempField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="vitalSignLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Microsoft YaHei UI" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Vital Sign"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="heartRateLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Heart Rate"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="bloodPressureLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Blood Pressure"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="dateField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="newEcounterLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="24" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="New Encounter"/>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>
