@@ -45,6 +45,9 @@ public class Person {
     public void setPhoneNumber(long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return this.name;
+    }
 }

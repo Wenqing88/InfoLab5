@@ -322,7 +322,7 @@ public class ExistingPatientPanel extends javax.swing.JPanel {
                 Object[] row = new Object[6];
                 row[0] = e.getDate().toString();
                 row[1] = e.getDoctor().getName();
-                row[2] = e.getDoctor().getDoctorID();
+                row[2] = e.getDoctor().getID();
                 row[3] = e.getVitalSign().getHeartRate();
                 row[4] = e.getVitalSign().getBloodPressure();
                 row[5] = e.getVitalSign().getTemperature();

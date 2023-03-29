@@ -8,29 +8,14 @@ package model;
  *
  * @author yulon
  */
-public class Doctor {
-    String name;
-    int doctorID;
+public class Doctor extends Person {
     Hospital hospital;
 
-    public String getName() {
-        return name;
-    }
-
-    public int getDoctorID() {
-        return doctorID;
+    public Doctor() {
     }
 
     public Hospital getHospital() {
-        return hospital;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDoctorID(int doctorID) {
-        this.doctorID = doctorID;
+        return this.hospital;
     }
 
     public void setHospital(Hospital hospital) {

@@ -16,6 +16,11 @@ public class Community {
     ArrayList<String> houses;
     ArrayList<Hospital> hospitals;
 
+    public Community() {
+        this.houses = new ArrayList<String>();
+        this.hospitals = new ArrayList<Hospital>();
+    }
+
     public String getCity() {
         return city;
     }
@@ -52,7 +57,12 @@ public class Community {
         this.houses.add(house);
     }
 
-    public void addHospital(Hospital hospitals) {
-        this.hospitals.add(hospitals);
+    public void addHospital(Hospital hospital) {
+        this.hospitals.add(hospital);
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }
