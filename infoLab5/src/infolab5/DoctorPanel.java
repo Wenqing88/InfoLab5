@@ -218,7 +218,7 @@ public class DoctorPanel extends javax.swing.JPanel {
             return;
         }
         DoctorDirectory.getInstance().addDoctor(doctor);
-        JOptionPane.showMessageDialog(this, "Doctor Information is updated successfully.");
+        JOptionPane.showMessageDialog(this, "Doctor Information is added successfully.");
         populateTable();
     }//GEN-LAST:event_addButtonActionPerformed
 
@@ -253,6 +253,7 @@ public class DoctorPanel extends javax.swing.JPanel {
             }
             
             selectedDoctor.setName(nameField.getText());
+            selectedDoctor.setHospital(null);
             for(Hospital h : HospitalDirectory.getInstance().getHospitals()){
                 // might need to determine the hospital by community and city
                 if(hospitalField.getText() == null ? h.getName() == null : hospitalField.getText().equals(h.getName())){
@@ -265,8 +266,7 @@ public class DoctorPanel extends javax.swing.JPanel {
                             "Invalid Input", HEIGHT);
                 return;
             }
-            DoctorDirectory.getInstance().addDoctor(selectedDoctor);
-            JOptionPane.showMessageDialog(this, "Patient Information is updated successfully.");
+            JOptionPane.showMessageDialog(this, "Doctor Information is updated successfully.");
             populateTable();
         }
     }//GEN-LAST:event_updateButtonActionPerformed

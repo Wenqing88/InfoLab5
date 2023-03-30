@@ -184,7 +184,8 @@ public class HospitalPanel extends javax.swing.JPanel {
         
         hospital.setName(hospitalField.getText());
         for(Community comm : MedicalSystem.getInstance().getCommunities()){
-            if(comm.getName() == communityField.getText() && comm.getCity() == cityField.getText()){
+            if((comm.getName() == null ? communityField.getText() == null : comm.getName().equals(communityField.getText())) 
+                    && (comm.getCity() == null ? cityField.getText() == null : comm.getCity().equals(cityField.getText()))){
                 hospital.setComm(comm);
                 hospital.setCity(comm.getCity());
                 comm.addHospital(hospital);
@@ -198,6 +199,7 @@ public class HospitalPanel extends javax.swing.JPanel {
             comm.addHospital(hospital);
             hospital.setComm(comm);
             hospital.setCity(comm.getCity());
+            MedicalSystem.getInstance().addCommunity(comm);
         }
         
         HospitalDirectory.getInstance().addHospital(hospital);
@@ -245,12 +247,12 @@ public class HospitalPanel extends javax.swing.JPanel {
             DefaultTableModel model = (DefaultTableModel) hospitalTable.getModel();
             hospital = (Hospital) model.getValueAt(selectedIndex, 0);
             
-            
-            
-            // same as add button
+
             hospital.setName(hospitalField.getText());
+            hospital.setComm(null);
             for(Community comm : MedicalSystem.getInstance().getCommunities()){
-                if(comm.getName() == communityField.getText() && comm.getCity() == cityField.getText()){
+                if((comm.getName() == null ? communityField.getText() == null : comm.getName().equals(communityField.getText())) 
+                        && (comm.getCity() == null ? cityField.getText() == null : comm.getCity().equals(cityField.getText()))){
                     hospital.setComm(comm);
                     hospital.setCity(comm.getCity());
                     comm.addHospital(hospital);
@@ -264,6 +266,7 @@ public class HospitalPanel extends javax.swing.JPanel {
                 comm.addHospital(hospital);
                 hospital.setComm(comm);
                 hospital.setCity(comm.getCity());
+                MedicalSystem.getInstance().addCommunity(comm);
             }
         }
         
