@@ -181,18 +181,22 @@ public class HospitalPanel extends javax.swing.JPanel {
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         // TODO add your handling code here:
         Hospital hospital = new Hospital();
-        
+        if (hospitalField.getText().equals("") || communityField.getText().equals("") || cityField.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Can't leave any field blank!");
+            return;
+        }
+
         hospital.setName(hospitalField.getText());
-        for(Community comm : MedicalSystem.getInstance().getCommunities()){
-            if((comm.getName() == null ? communityField.getText() == null : comm.getName().equals(communityField.getText())) 
-                    && (comm.getCity() == null ? cityField.getText() == null : comm.getCity().equals(cityField.getText()))){
+        for (Community comm : MedicalSystem.getInstance().getCommunities()) {
+            if ((comm.getName() == null ? communityField.getText() == null : comm.getName().equals(communityField.getText()))
+                    && (comm.getCity() == null ? cityField.getText() == null : comm.getCity().equals(cityField.getText()))) {
                 hospital.setComm(comm);
                 hospital.setCity(comm.getCity());
                 comm.addHospital(hospital);
             }
         }
-        
-        if(hospital.getComm() == null){
+
+        if (hospital.getComm() == null) {
             Community comm = new Community();
             comm.setName(communityField.getText());
             comm.setCity(cityField.getText());
@@ -201,7 +205,7 @@ public class HospitalPanel extends javax.swing.JPanel {
             hospital.setCity(comm.getCity());
             MedicalSystem.getInstance().addCommunity(comm);
         }
-        
+
         HospitalDirectory.getInstance().addHospital(hospital);
         JOptionPane.showMessageDialog(this, "Hospital Information is added successfully.");
         poplutateTable();
@@ -246,20 +250,22 @@ public class HospitalPanel extends javax.swing.JPanel {
         } else {
             DefaultTableModel model = (DefaultTableModel) hospitalTable.getModel();
             hospital = (Hospital) model.getValueAt(selectedIndex, 0);
-            
 
-            hospital.setName(hospitalField.getText());
+            if (cityField.getText().equals("") || communityField.getText().equals("") || hospitalField.getText().equals("")) {
+                JOptionPane.showMessageDialog(this, "Can't leave any field blank!");
+                return;
+            }
             hospital.setComm(null);
-            for(Community comm : MedicalSystem.getInstance().getCommunities()){
-                if((comm.getName() == null ? communityField.getText() == null : comm.getName().equals(communityField.getText())) 
-                        && (comm.getCity() == null ? cityField.getText() == null : comm.getCity().equals(cityField.getText()))){
+            for (Community comm : MedicalSystem.getInstance().getCommunities()) {
+                if ((comm.getName() == null ? communityField.getText() == null : comm.getName().equals(communityField.getText()))
+                        && (comm.getCity() == null ? cityField.getText() == null : comm.getCity().equals(cityField.getText()))) {
                     hospital.setComm(comm);
                     hospital.setCity(comm.getCity());
                     comm.addHospital(hospital);
                 }
             }
 
-            if(hospital.getComm() == null){
+            if (hospital.getComm() == null) {
                 Community comm = new Community();
                 comm.setName(communityField.getText());
                 comm.setCity(cityField.getText());
@@ -268,12 +274,10 @@ public class HospitalPanel extends javax.swing.JPanel {
                 hospital.setCity(comm.getCity());
                 MedicalSystem.getInstance().addCommunity(comm);
             }
+            JOptionPane.showMessageDialog(this, "Hospital Information is update successfully.");
+            poplutateTable();
         }
-        
-        JOptionPane.showMessageDialog(this, "Hospital Information is update successfully.");
-        poplutateTable();
     }//GEN-LAST:event_updateButtonActionPerformed
-
 
     public void poplutateTable() {
         DefaultTableModel model = (DefaultTableModel) hospitalTable.getModel();
@@ -287,13 +291,13 @@ public class HospitalPanel extends javax.swing.JPanel {
         }
         clearFields();
     }
-    
+
     private void clearFields() {
         hospitalField.setText("");
         communityField.setText("");
         cityField.setText("");
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.JTextField cityField;
