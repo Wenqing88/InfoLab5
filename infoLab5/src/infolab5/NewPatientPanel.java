@@ -49,8 +49,8 @@ public class NewPatientPanel extends javax.swing.JPanel {
         cityField = new javax.swing.JTextField();
         nameLabel = new javax.swing.JLabel();
         addressLabel = new javax.swing.JLabel();
-        submitButton = new javax.swing.JButton();
         nearbyHospital = new javax.swing.JLabel();
+        submitButton = new javax.swing.JButton();
 
         hospitalTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -60,7 +60,7 @@ public class NewPatientPanel extends javax.swing.JPanel {
                 {null, null}
             },
             new String [] {
-                "Hospital Name", "Hospital Address"
+                "Hospital Name", "Community, City"
             }
         ));
         hospital.setViewportView(hospitalTable);
@@ -108,14 +108,14 @@ public class NewPatientPanel extends javax.swing.JPanel {
 
         addressLabel.setText("House Address");
 
+        nearbyHospital.setText("Nearby Hospital");
+
         submitButton.setText("Submit");
         submitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitButtonActionPerformed(evt);
             }
         });
-
-        nearbyHospital.setText("Nearby Hospital");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -136,7 +136,6 @@ public class NewPatientPanel extends javax.swing.JPanel {
                     .addComponent(numberLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(submitButton)
                     .addComponent(hospital, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addressField, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(numberField, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -144,6 +143,11 @@ public class NewPatientPanel extends javax.swing.JPanel {
                     .addComponent(communityField, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cityField, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(75, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(335, 335, 335)
+                    .addComponent(submitButton)
+                    .addContainerGap(343, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,9 +178,12 @@ public class NewPatientPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(hospital, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nearbyHospital, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(117, 117, 117)
-                .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(207, Short.MAX_VALUE))
+                .addContainerGap(360, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(567, Short.MAX_VALUE)
+                    .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(197, 197, 197)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -194,21 +201,23 @@ public class NewPatientPanel extends javax.swing.JPanel {
 
     private void communityFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_communityFieldActionPerformed
         // TODO add your handling code here:
+        poplutateTable();
     }//GEN-LAST:event_communityFieldActionPerformed
 
     private void cityFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cityFieldActionPerformed
         // TODO add your handling code here:
+        poplutateTable();
     }//GEN-LAST:event_cityFieldActionPerformed
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         // TODO add your handling code here:
         Patient patient = new Patient();
         patient.setName(nameField.getText());
-        try{
+        try {
             patient.setPhoneNumber(Long.parseLong(numberField.getText()));
-        }catch(NumberFormatException nfe){
+        } catch (NumberFormatException nfe) {
             JOptionPane.showMessageDialog(this, "Phone number and age should be in numbers only!",
-                        "Invalid Input", HEIGHT);
+                    "Invalid Input", HEIGHT);
         }
 
         Community comm = new Community();
@@ -216,9 +225,9 @@ public class NewPatientPanel extends javax.swing.JPanel {
         comm.setName(communityField.getText());
         Address address = new Address(cityField.getText(), addressField.getText(), comm);
         patient.setAddress(address);
-        
+
         PatientDirectory.getInstance().addPatient(patient);
-        
+
         JOptionPane.showMessageDialog(this, "Patient Information is added successfully.");
         poplutateTable();
     }//GEN-LAST:event_submitButtonActionPerformed
@@ -228,16 +237,18 @@ public class NewPatientPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         // still need to filter out hospitals which are not in the same community
         for (Hospital h : HospitalDirectory.getInstance().getHospitals()) {
-            if(h.getComm().getName() == communityField.getText()){
-                Object[] row = new Object[2];
-                row[0] = h;
-                row[1] = h.getComm().getName() + "," + h.getCity();
-                model.addRow(row);
-            }
+            Object[] row = new Object[2];
+            row[0] = h;
+            row[1] = h.getComm().getName() + "," + h.getCity();
+            model.addRow(row);
+//            if(communityField.getText() == null ? h.getComm().getName() == null : communityField.getText().equals(h.getComm().getName())
+//                    && cityField.getText() == null ? h.getCity() == null : cityField.getText().equals(h.getCity())){
+//                
+//            }
         }
         clearFields();
     }
-    
+
     private void clearFields() {
         nameField.setText("");
         numberField.setText("");
