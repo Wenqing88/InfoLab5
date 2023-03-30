@@ -35,7 +35,7 @@ public class IDList {
         return this.IDs;
     }
     
-    public void addPatientID(int id){
+    public void addID(int id){
         this.IDs.add(id);
     }
     

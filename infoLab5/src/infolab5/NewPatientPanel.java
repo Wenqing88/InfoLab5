@@ -203,7 +203,6 @@ public class NewPatientPanel extends javax.swing.JPanel {
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         // TODO add your handling code here:
         Patient patient = new Patient();
-        patient.setID(0); // still need to generate random ID
         patient.setName(nameField.getText());
         try{
             patient.setPhoneNumber(Long.parseLong(numberField.getText()));

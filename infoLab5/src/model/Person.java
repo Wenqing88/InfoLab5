@@ -18,6 +18,15 @@ public class Person {
     Address address;
     Random rand = new Random();
 
+    public Person() {
+        int tmp = rand.nextInt(900000)+100000;
+        while(IDList.getInstance().getIDs().contains(tmp)){
+            tmp = rand.nextInt(900000)+100000;
+        }
+        IDList.getInstance().addID(tmp);
+        this.ID = tmp;
+    }
+
     
     public String getName() {
         return name;
