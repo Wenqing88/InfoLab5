@@ -17,7 +17,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="81" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
@@ -36,12 +36,13 @@
                                       <Component id="communityLabel" alignment="0" pref="112" max="32767" attributes="0"/>
                                       <Component id="cityLabel" alignment="1" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <EmptySpace min="71" pref="71" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
                                       <Component id="addressField" max="32767" attributes="0"/>
                                       <Component id="numberField" alignment="0" pref="120" max="32767" attributes="0"/>
                                       <Component id="communityField" alignment="1" max="32767" attributes="0"/>
                                       <Component id="cityField" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="idDisplayLabel" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -52,7 +53,6 @@
                               </Group>
                               <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="idDisplayLabel" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
                                   <Component id="addButton" alignment="0" min="-2" pref="78" max="-2" attributes="0"/>
                                   <Component id="nameField" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
                               </Group>
@@ -96,9 +96,7 @@
               <Component id="titleLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="existingPatientPanel" min="-2" pref="111" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="idDisplayLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace pref="26" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="deletButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="addButton" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -113,7 +111,10 @@
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="idLabel" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="idLabel" max="32767" attributes="0"/>
+                  <Component id="idDisplayLabel" max="32767" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="phoneNumLabel" alignment="3" min="-2" max="-2" attributes="0"/>
