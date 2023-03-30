@@ -212,6 +212,8 @@ public class NewPatientPanel extends javax.swing.JPanel {
         }
 
         Community comm = new Community();
+        comm.setCity(cityField.getText());
+        comm.setName(communityField.getText());
         Address address = new Address(cityField.getText(), addressField.getText(), comm);
         patient.setAddress(address);
         
