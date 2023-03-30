@@ -183,9 +183,15 @@ public class NewEncounterPanel extends javax.swing.JPanel {
         Encounter encounter = new Encounter();
         // TODO add your handling code here:
         VitalSign vs = new VitalSign();
-        vs.setBloodPressure(Integer.parseInt(bloodPressureField.getText()));
-        vs.setHeartRate(Integer.parseInt(heartRateField.getText()));
-        vs.setTemperature(Float.parseFloat(bodyTempField.getText()));
+        try{
+            vs.setBloodPressure(Integer.parseInt(bloodPressureField.getText()));
+            vs.setHeartRate(Integer.parseInt(heartRateField.getText()));
+            vs.setTemperature(Float.parseFloat(bodyTempField.getText()));
+        }catch(NumberFormatException nfe){
+            JOptionPane.showMessageDialog(this, 
+                    "Blood pressure, heart rate, and temperature should be in numbers only!",
+                        "Invalid Input", HEIGHT);
+        }
         encounter.setVitalSign(vs);
 
         // set doctor and date
@@ -197,7 +203,7 @@ public class NewEncounterPanel extends javax.swing.JPanel {
         }
         
         for(Doctor d : DoctorDirectory.getInstance().getAllDoctors()){
-            if(docIDField.getText() == String.valueOf(d.getID())){
+            if(docIDField.getText() == null ? String.valueOf(d.getID()) == null : docIDField.getText().equals(String.valueOf(d.getID()))){
                 encounter.setDoctor(d);
             }
         }
@@ -207,7 +213,7 @@ public class NewEncounterPanel extends javax.swing.JPanel {
             return;
         }
         for(Patient p : PatientDirectory.getInstance().getPatients()){
-            if(patientIDField.getText() == String.valueOf(p.getID())){
+            if(patientIDField.getText() == null ? String.valueOf(p.getID()) == null : patientIDField.getText().equals(String.valueOf(p.getID()))){
                 p.addEncounterHistory(encounter);
                 JOptionPane.showMessageDialog(this, "Encounter Information is added successfully.");
                 return;
