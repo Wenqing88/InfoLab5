@@ -326,7 +326,7 @@ public class ExistingPatientPanel extends javax.swing.JPanel {
                 row[3] = e.getVitalSign().getHeartRate();
                 row[4] = e.getVitalSign().getBloodPressure();
                 row[5] = e.getVitalSign().getTemperature();
-                model.addRow(row);
+                encounterHistory.addRow(row);
             }
         }
     }//GEN-LAST:event_viewButtonActionPerformed
